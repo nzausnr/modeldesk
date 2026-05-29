@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — ModelDesk</title>
+  <meta name="description" content="ModelDesk is a learning resource for designers who work with 3D software and physical model making.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html"><span class="brand-mark">MD</span> ModelDesk</a>
+    <div class="nav-links">
+      <a href="learn.html">Learn</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html" class="active">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-primary" onclick="openModal()">Get Help</button>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="learn.html">Learn</a>
+  <a href="blog.html">Blog</a>
+  <a href="about.html">About</a>
+</div>
+
+<section class="about-hero section-sm">
+  <div class="container">
+    <div class="about-content">
+      <span class="eyebrow">// About ModelDesk</span>
+      <h1>For designers who build</h1>
+      <p style="font-size:1.1rem; margin-top:1rem;">ModelDesk exists because there is a gap between learning 3D design software and knowing what to do with a digital model when you need to make something physical. Most tutorials stop at the screen. We start from there.</p>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);">
+
+<section class="section">
+  <div class="container">
+    <div style="max-width:680px;">
+      <h2>What this is</h2>
+      <p>ModelDesk is a learning resource built around one specific gap — the distance between finishing a 3D model and producing something you can hold. That distance involves file formats, scale calculations, laser cutter setup, material choices, and assembly techniques that most software tutorials never cover.</p>
+      <p>The content here is written from practice. Not from watching other tutorials — from designing buildings and spaces, exporting files, cutting materials, and building physical models. Some with laser cutters. Many without.</p>
+
+      <h2 style="margin-top:2.5rem;">Who it is for</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <span style="font-size:1.5rem;display:block;margin-bottom:0.75rem;">🎓</span>
+          <h3>Architecture students</h3>
+          <p style="font-size:0.88rem;">Working on course projects, portfolios, and physical model assessments. Learning SketchUp for the first time or trying to get better faster.</p>
+        </div>
+        <div class="about-card">
+          <span style="font-size:1.5rem;display:block;margin-bottom:0.75rem;">🔧</span>
+          <h3>Designers who make</h3>
+          <p style="font-size:0.88rem;">Professionals and practitioners who use 3D software for design and need to translate digital work into physical prototypes or presentation models.</p>
+        </div>
+        <div class="about-card">
+          <span style="font-size:1.5rem;display:block;margin-bottom:0.75rem;">🏗</span>
+          <h3>Makers and builders</h3>
+          <p style="font-size:0.88rem;">Anyone working with laser cutters, CNC machines, or hand tools who needs to understand how digital files become physical objects.</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top:2.5rem;">The tutoring</h2>
+      <p>The free tutoring offered through ModelDesk connects you directly with a designer on WhatsApp. This is not a chatbot or an automated system — it is a real person who has used these tools on real projects and can work through your specific problem with you.</p>
+      <p>Sessions are informal and project-focused. You describe what you are trying to do, share your file or a screenshot, and work through it together. Most issues are resolved in one short conversation.</p>
+      <div style="margin-top:1.5rem;">
+        <button class="btn btn-primary btn-lg" onclick="openModal()">Connect with a tutor →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-brand" href="index.html"><span class="brand-mark">MD</span> ModelDesk</a>
+    <div class="footer-links">
+      <a href="learn.html">Learn</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+    </div>
+    <span class="footer-copy">© 2026 ModelDesk. For designers who build.</span>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="signupModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <span class="eyebrow">// Free tutoring</span>
+    <h2>Get help with your project</h2>
+    <p>Tell us what you are working on and a tutor will reach out on WhatsApp.</p>
+    <form class="cta-form" id="modalForm" name="tutor-request-about" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="tutor-request-about">
+      <input type="hidden" name="bot-field" style="display:none">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="tel" name="whatsapp" placeholder="WhatsApp number (e.g. +61 4xx xxx xxx)" required>
+      <input type="email" name="email" placeholder="Email address">
+      <select name="country" required>
+        <option value="">Country</option>
+        <option>Australia</option>
+        <option>Kenya</option>
+        <option>United Kingdom</option>
+        <option>United States</option>
+        <option>South Africa</option>
+        <option>Nigeria</option>
+        <option>India</option>
+        <option>New Zealand</option>
+        <option>Canada</option>
+        <option>Other</option>
+      </select>
+      <input type="text" name="project" placeholder="What are you working on?">
+      <button type="submit" class="btn btn-primary">Connect now →</button>
+      <p class="form-note">Your tutor will message you on WhatsApp within a few hours.</p>
+    </form>
+    <div class="form-success">
+      <h3>You're connected ✓</h3>
+      <p>Thanks <span class="success-name"></span>! A tutor will reach out on WhatsApp shortly.</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

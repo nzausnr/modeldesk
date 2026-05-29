@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SketchUp Free is more powerful than you think — ModelDesk</title>
+  <meta name="description" content="Most SketchUp tutorials assume you are using Pro. Here is what the free version actually does and the workarounds for what it does not.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="brand-mark">MD</span> ModelDesk</a>
+    <div class="nav-links">
+      <a href="../learn.html">Learn</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-primary" onclick="openModal()">Get Help</button>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <a href="../learn.html">Learn</a>
+  <a href="../blog.html">Blog</a>
+  <a href="../about.html">About</a>
+</div>
+
+<div class="container" style="padding-top:2.5rem; padding-bottom:4rem; max-width:760px;">
+
+  <a href="../blog.html" class="btn btn-ghost" style="margin-bottom:2rem; display:inline-flex;">← Back to blog</a>
+
+  <div class="post-meta">
+    <span class="blog-date">March 2025</span>
+    <span class="blog-tag">SketchUp</span>
+  </div>
+
+  <h1 style="margin:1rem 0 1.5rem; font-size:clamp(1.6rem,4vw,2.4rem);">SketchUp Free is more powerful than you think — here is what most tutorials miss</h1>
+
+  <p style="font-size:1.1rem; color:var(--text-secondary); margin-bottom:2.5rem; line-height:1.7;">Search for SketchUp tutorials and most of what you find assumes you have the Pro version — LayOut, desktop app, advanced export options. The free web version is talked about as if it is a limitation. It is not. For most design and model-making work, it does everything you need.</p>
+
+  <hr style="border:none;border-top:1px solid var(--border);margin:2rem 0;">
+
+  <div class="post-content">
+
+    <h2>What SketchUp Free actually includes</h2>
+    <p>SketchUp Free runs entirely in a web browser. No installation, no licence key, no annual fee. Here is what it gives you:</p>
+    <ul>
+      <li>Full 3D modelling — Push/Pull, Follow Me, all standard tools</li>
+      <li>Unlimited access to the <strong>3D Warehouse</strong> — thousands of free furniture, fixtures, trees, vehicles, and architectural components</li>
+      <li>Material and texture application with a large built-in library</li>
+      <li>Solar shadow studies — set your location and time of day</li>
+      <li>Section cuts — slice through the model to show interior views</li>
+      <li>DXF and DWG export for laser cutting and CAD</li>
+      <li>PNG and JPG image export for presentations</li>
+      <li>Works on any device with a modern browser — Mac, Windows, Chromebook</li>
+    </ul>
+
+    <h2>What it does not have — and the workarounds</h2>
+    <table class="learn-table">
+      <thead><tr><th>Missing from Free</th><th>Workaround</th></tr></thead>
+      <tbody>
+        <tr><td>LayOut (dimensioned 2D drawings)</td><td>Export PNG views and add dimensions in Canva, Illustrator, or Affinity Designer. Works fine for student portfolios.</td></tr>
+        <tr><td>Works offline</td><td>Save your work regularly to the cloud. Download a local <code>.skp</code> backup from File → Download. Open files locally if you have Pro.</td></tr>
+        <tr><td>Import DXF/DWG files</td><td>If you need to bring in existing CAD drawings, export them as image files and trace in SketchUp, or use a conversion service first.</td></tr>
+        <tr><td>Advanced rendering</td><td>SketchUp Free renders look clean and presentation-ready with good material choices. For photorealistic renders, export to Lumion or use free render services.</td></tr>
+        <tr><td>Extensions / plugins</td><td>Most critical plugins (Curviloft, Fredo6 tools) are for Pro only. For standard architectural work, the built-in tools are sufficient.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>The 3D Warehouse — most tutorials ignore this</h2>
+    <p>The 3D Warehouse is built into SketchUp Free and most tutorials treat it as a secondary feature. It should be the first thing you use after setting up your walls. Inside the Warehouse:</p>
+    <div class="learn-callout good">
+      <strong>Furniture</strong> — sofas, beds, kitchen units, bathroom fittings, dining tables — all free, all to scale<br><br>
+      <strong>Landscaping</strong> — trees, shrubs, grass surfaces, garden furniture<br><br>
+      <strong>Vehicles</strong> — cars at correct scale for site plan context<br><br>
+      <strong>People</strong> — figures that give your model a sense of scale<br><br>
+      <strong>Building components</strong> — stairs, doors, windows with correct dimensions
+    </div>
+    <p>Using Warehouse assets means your model looks finished and realistic without spending hours modelling individual pieces. A bathroom takes two minutes to furnish — download toilet, basin, shower tray, and you are done.</p>
+
+    <h2>Shadow studies — a feature most students never use</h2>
+    <p>SketchUp Free includes a solar shadow tool that simulates sun position at any time of day and date for any location on earth. For design projects where solar orientation matters — which is almost all of them — this is an incredibly useful tool that is completely free.</p>
+    <div class="learn-steps">
+      <div class="learn-step"><div class="step-num">1</div><div>Go to <strong>Window → Model Info → Geo-location</strong> and set your project location — a town, city, or coordinates.</div></div>
+      <div class="learn-step"><div class="step-num">2</div><div>Open <strong>View → Shadows</strong> to turn shadows on.</div></div>
+      <div class="learn-step"><div class="step-num">3</div><div>Use the shadow toolbar (View → Toolbars → Shadows) to adjust time of day and time of year. Watch how shadows move across your building.</div></div>
+    </div>
+
+    <h2>When to upgrade to Pro</h2>
+    <p>The honest answer is: most students do not need to. The cases where Pro becomes genuinely useful are:</p>
+    <ul>
+      <li>Your course requires <strong>LayOut</strong> for dimensioned drawings submitted as part of assessment</li>
+      <li>You need to <strong>import DXF or DWG files</strong> from a client or consultant</li>
+      <li>You are working <strong>offline</strong> regularly and cannot rely on a browser connection</li>
+      <li>You need specific <strong>extensions</strong> that only work on the desktop version</li>
+    </ul>
+    <div class="learn-callout">
+      If none of those apply to your current project, stay on Free. Learn the tool properly on the free version first — the skills transfer directly to Pro if you upgrade later.
+    </div>
+
+  </div>
+
+  <hr style="border:none;border-top:1px solid var(--border);margin:3rem 0 2rem;">
+
+  <div style="background:var(--accent-light);border:1px solid var(--accent);border-radius:var(--r-lg);padding:1.5rem;">
+    <h3 style="margin-bottom:0.5rem;">Want to get further faster in SketchUp?</h3>
+    <p style="margin-bottom:1rem;">A tutoring session on WhatsApp — working through your actual model — covers more ground than any tutorial video.</p>
+    <button class="btn btn-primary" onclick="openModal()">Connect with a tutor →</button>
+  </div>
+
+  <div style="margin-top:3rem;">
+    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Continue reading</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <a href="dxf-export.html" style="display:block;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);text-decoration:none;" onmouseover="this.style.borderColor='var(--border-hover)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-size:0.75rem;color:var(--text-muted);font-family:var(--font-mono);">Sep 2025</span>
+        <p style="font-size:0.9rem;font-weight:500;color:var(--text);margin-top:0.3rem;">Exporting DXF from SketchUp →</p>
+      </a>
+      <a href="scale-explained.html" style="display:block;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);text-decoration:none;" onmouseover="this.style.borderColor='var(--border-hover)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-size:0.75rem;color:var(--text-muted);font-family:var(--font-mono);">Jul 2025</span>
+        <p style="font-size:0.9rem;font-weight:500;color:var(--text);margin-top:0.3rem;">Scale explained: 1:20, 1:50, 1:100 →</p>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-brand" href="../index.html"><span class="brand-mark">MD</span> ModelDesk</a>
+    <div class="footer-links">
+      <a href="../learn.html">Learn</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">About</a>
+    </div>
+    <span class="footer-copy">© 2026 ModelDesk. For designers who build.</span>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="signupModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <span class="eyebrow">// Free tutoring</span>
+    <h2>Get help with your project</h2>
+    <p>A tutor will reach out on WhatsApp.</p>
+    <form class="cta-form" id="modalForm" name="tutor-request-sketchup" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="tutor-request-sketchup">
+      <input type="hidden" name="bot-field" style="display:none">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+      <input type="email" name="email" placeholder="Email address">
+      <select name="country" required>
+        <option value="">Country</option>
+        <option>Australia</option>
+        <option>Kenya</option>
+        <option>United Kingdom</option>
+        <option>United States</option>
+        <option>South Africa</option>
+        <option>Nigeria</option>
+        <option>India</option>
+        <option>New Zealand</option>
+        <option>Canada</option>
+        <option>Other</option>
+      </select>
+      <input type="text" name="project" placeholder="What are you working on?">
+      <button type="submit" class="btn btn-primary">Connect now →</button>
+      <p class="form-note">Your tutor will message you within a few hours.</p>
+    </form>
+    <div class="form-success">
+      <h3>You're connected ✓</h3>
+      <p>Thanks <span class="success-name"></span>! A tutor will reach out on WhatsApp shortly.</p>
+    </div>
+  </div>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scale explained: 1:20, 1:50, 1:100 — ModelDesk</title>
+  <meta name="description" content="Scale is where most first models go wrong. A clear explanation of how scale ratios work and how to calculate every dimension.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="brand-mark">MD</span> ModelDesk</a>
+    <div class="nav-links">
+      <a href="../learn.html">Learn</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-primary" onclick="openModal()">Get Help</button>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <a href="../learn.html">Learn</a>
+  <a href="../blog.html">Blog</a>
+  <a href="../about.html">About</a>
+</div>
+
+<div class="container" style="padding-top:2.5rem; padding-bottom:4rem; max-width:760px;">
+
+  <a href="../blog.html" class="btn btn-ghost" style="margin-bottom:2rem; display:inline-flex;">← Back to blog</a>
+
+  <div class="post-meta">
+    <span class="blog-date">July 2025</span>
+    <span class="blog-tag">Model Making</span>
+  </div>
+
+  <h1 style="margin:1rem 0 1.5rem; font-size:clamp(1.6rem,4vw,2.4rem);">Scale explained: 1:20, 1:50, 1:100 — and why it matters for your model</h1>
+
+  <p style="font-size:1.1rem; color:var(--text-secondary); margin-bottom:2.5rem; line-height:1.7;">Scale is one of the first things architecture students learn and one of the most common things they get wrong in practice. A scale error discovered after cutting wastes material and time. Here is a clear explanation from the ground up.</p>
+
+  <hr style="border:none;border-top:1px solid var(--border);margin:2rem 0;">
+
+  <div class="post-content">
+
+    <h2>What scale actually means</h2>
+    <p>A scale ratio tells you how many times smaller your model or drawing is compared to the real thing. The format is always <strong>drawing size : real size</strong>.</p>
+    <div class="learn-callout">
+      <strong>1:20</strong> means 1 unit in the drawing equals 20 units in reality.<br><br>
+      So 1mm in the drawing = 20mm in reality.<br>
+      Or: 1cm in the drawing = 20cm in reality.<br>
+      Or: 1m in the drawing = 20m in reality — though you will never build a model that large.
+    </div>
+    <p>The left number is always the drawing. The right number is always reality. A larger right number means a smaller drawing — 1:100 is smaller than 1:20.</p>
+
+    <h2>Which scale to use for what</h2>
+    <table class="learn-table">
+      <thead><tr><th>Scale</th><th>Typical use</th><th>A 6m wall becomes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1:5</strong></td><td>Construction details — door handles, window profiles</td><td>1200mm — impractical for a full model</td></tr>
+        <tr><td><strong>1:10</strong></td><td>Detailed room sections, bathroom layouts</td><td>600mm — large but workable</td></tr>
+        <tr><td><strong>1:20</strong></td><td class="good">Individual house or room models — most common for students</td><td class="good">300mm — fits on a table, easy to work with</td></tr>
+        <tr><td><strong>1:50</strong></td><td>Apartment building, small commercial project</td><td>120mm — compact, fine details are difficult</td></tr>
+        <tr><td><strong>1:100</strong></td><td>Full site, large building</td><td>60mm — too small to show interior detail</td></tr>
+        <tr><td><strong>1:200</strong></td><td>Urban site plan, masterplan context</td><td>30mm — symbolic only</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Calculating dimensions — the formula</h2>
+    <div class="learn-callout good">
+      <strong>Model dimension = Real dimension ÷ Scale factor</strong><br><br>
+      The scale factor is the right-hand number in your ratio.
+    </div>
+    <p>At <strong>1:20</strong>:</p>
+    <ul>
+      <li>6000mm wall → 6000 ÷ 20 = <strong>300mm</strong></li>
+      <li>3000mm wall → 3000 ÷ 20 = <strong>150mm</strong></li>
+      <li>2700mm ceiling → 2700 ÷ 20 = <strong>135mm</strong></li>
+      <li>900mm door → 900 ÷ 20 = <strong>45mm</strong></li>
+      <li>111mm wall thickness → 111 ÷ 20 = <strong>5.55mm</strong> (round to 6mm for laser cutting)</li>
+    </ul>
+
+    <p style="margin-top:1rem;">At <strong>1:50</strong>:</p>
+    <ul>
+      <li>6000mm wall → 6000 ÷ 50 = <strong>120mm</strong></li>
+      <li>3000mm wall → 3000 ÷ 50 = <strong>60mm</strong></li>
+      <li>2700mm ceiling → 2700 ÷ 50 = <strong>54mm</strong></li>
+    </ul>
+
+    <h2>Common scale mistakes</h2>
+
+    <div class="learn-callout warn">
+      <strong>Scaling twice.</strong> If you apply 1:20 scale in SketchUp during DXF export, then scale again in Illustrator, your pieces will be 400 times too small. Apply scale once — in SketchUp — and import at 1:1 in Illustrator.
+    </div>
+
+    <div class="learn-callout warn">
+      <strong>Mixing units.</strong> SketchUp models are built in millimetres internally, even when the interface shows metres. When you draw a 3m wall, type <code>3000</code> in the dimension box — not <code>3</code>. If you type 3, you have drawn a 3mm wall.
+    </div>
+
+    <div class="learn-callout warn">
+      <strong>Not verifying before cutting.</strong> Always measure one known dimension in Illustrator with the ruler tool after importing your DXF. Confirm it matches your expected scaled dimension. This takes 30 seconds and prevents expensive material waste.
+    </div>
+
+    <h2>Scale on drawings vs scale on physical models</h2>
+    <p>The word "scale" is used in two related but distinct ways:</p>
+    <ul>
+      <li><strong>On a 2D drawing</strong> — a floor plan printed at 1:50 means the building layout is reduced 50× on paper. You can read dimensions with a scale ruler.</li>
+      <li><strong>On a physical model</strong> — a model built at 1:20 means every wall, every door, every window is physically one twentieth of real size. A 3mm sheet of plywood represents a 60mm structural element in reality.</li>
+    </ul>
+    <p>They use the same ratios and the same maths — but they exist in different forms. A physical model at 1:20 looks like a physical model. A drawing at 1:20 looks like a drawing. Both are valid representations of the same design.</p>
+
+  </div>
+
+  <hr style="border:none;border-top:1px solid var(--border);margin:3rem 0 2rem;">
+
+  <div style="background:var(--accent-light);border:1px solid var(--accent);border-radius:var(--r-lg);padding:1.5rem;">
+    <h3 style="margin-bottom:0.5rem;">Not sure your dimensions are right?</h3>
+    <p style="margin-bottom:1rem;">A tutor can check your scale and dimensions over WhatsApp before you cut anything — takes about 10 minutes.</p>
+    <button class="btn btn-primary" onclick="openModal()">Get your scale checked →</button>
+  </div>
+
+  <div style="margin-top:3rem;">
+    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Continue reading</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <a href="dxf-export.html" style="display:block;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);text-decoration:none;" onmouseover="this.style.borderColor='var(--border-hover)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-size:0.75rem;color:var(--text-muted);font-family:var(--font-mono);">Sep 2025</span>
+        <p style="font-size:0.9rem;font-weight:500;color:var(--text);margin-top:0.3rem;">Exporting DXF from SketchUp →</p>
+      </a>
+      <a href="laser-cut-model.html" style="display:block;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);text-decoration:none;" onmouseover="this.style.borderColor='var(--border-hover)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-size:0.75rem;color:var(--text-muted);font-family:var(--font-mono);">Oct 2025</span>
+        <p style="font-size:0.9rem;font-weight:500;color:var(--text);margin-top:0.3rem;">Your first laser cut model →</p>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-brand" href="../index.html"><span class="brand-mark">MD</span> ModelDesk</a>
+    <div class="footer-links">
+      <a href="../learn.html">Learn</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">About</a>
+    </div>
+    <span class="footer-copy">© 2026 ModelDesk. For designers who build.</span>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="signupModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <span class="eyebrow">// Free tutoring</span>
+    <h2>Get help with your project</h2>
+    <p>A tutor will reach out on WhatsApp.</p>
+    <form class="cta-form" id="modalForm" name="tutor-request-scale" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="tutor-request-scale">
+      <input type="hidden" name="bot-field" style="display:none">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+      <input type="email" name="email" placeholder="Email address">
+      <select name="country" required>
+        <option value="">Country</option>
+        <option>Australia</option>
+        <option>Kenya</option>
+        <option>United Kingdom</option>
+        <option>United States</option>
+        <option>South Africa</option>
+        <option>Nigeria</option>
+        <option>India</option>
+        <option>New Zealand</option>
+        <option>Canada</option>
+        <option>Other</option>
+      </select>
+      <input type="text" name="project" placeholder="What are you working on?">
+      <button type="submit" class="btn btn-primary">Connect now →</button>
+      <p class="form-note">Your tutor will message you within a few hours.</p>
+    </form>
+    <div class="form-success">
+      <h3>You're connected ✓</h3>
+      <p>Thanks <span class="success-name"></span>! A tutor will reach out on WhatsApp shortly.</p>
+    </div>
+  </div>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>

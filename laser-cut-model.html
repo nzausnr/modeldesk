@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your first laser cut model — ModelDesk</title>
+  <meta name="description" content="What to prepare before you go to the laser cutter lab — the things nobody tells you in advance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html"><span class="brand-mark">MD</span> ModelDesk</a>
+    <div class="nav-links">
+      <a href="../learn.html">Learn</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-primary" onclick="openModal()">Get Help</button>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <a href="../learn.html">Learn</a>
+  <a href="../blog.html">Blog</a>
+  <a href="../about.html">About</a>
+</div>
+
+<div class="container" style="padding-top:2.5rem; padding-bottom:4rem; max-width:760px;">
+
+  <a href="../blog.html" class="btn btn-ghost" style="margin-bottom:2rem; display:inline-flex;">← Back to blog</a>
+
+  <div class="post-meta">
+    <span class="blog-date">October 2025</span>
+    <span class="blog-tag">Laser Cutting</span>
+  </div>
+
+  <h1 style="margin:1rem 0 1.5rem; font-size:clamp(1.6rem,4vw,2.4rem);">Your first laser cut model — what to prepare before you go to the lab</h1>
+
+  <p style="font-size:1.1rem; color:var(--text-secondary); margin-bottom:2.5rem; line-height:1.7;">Most first visits to a laser cutter lab end the same way — the file is not ready, the material is the wrong thickness, or the scale is off and you realise it only after the machine has already cut. Here is how to arrive prepared.</p>
+
+  <hr style="border:none;border-top:1px solid var(--border);margin:2rem 0;">
+
+  <div class="post-content">
+
+    <h2>What the machine operator expects from you</h2>
+    <p>A laser cutter operator at a school or makerspace is not a designer. Their job is to run the machine safely — not to fix your file. Arrive with a file that is ready to cut, or expect to be turned away or to wait while others go ahead of you.</p>
+    <p>What they need from you:</p>
+    <ul>
+      <li>A file in a format the software accepts — usually prepared in <strong>Adobe Illustrator</strong> and printed to <strong>Trotec Job Control</strong> or similar</li>
+      <li>All cut lines set to <strong>hairline stroke (0.001pt)</strong></li>
+      <li>Cut lines in <strong>red (RGB 255, 0, 0)</strong> for Trotec machines</li>
+      <li>Knowledge of your <strong>material type and thickness</strong></li>
+      <li>Pieces arranged to fit within the size of your material sheet</li>
+    </ul>
+
+    <h2>The three things most people get wrong</h2>
+
+    <div class="learn-callout warn">
+      <strong>1. Stroke weight.</strong> This is the single most common error. A stroke of 0.5pt or 1pt tells the laser to engrave — it burns a line into the surface but does not cut through. Only hairline (0.001pt) produces a clean cut. Select all and set hairline before sending anything.
+    </div>
+
+    <div class="learn-callout warn">
+      <strong>2. Scale.</strong> If you did not apply scale correctly during the DXF export from SketchUp, your pieces will be the wrong size. Always measure one dimension in Illustrator before printing to Job Control. A 6m wall at 1:20 should be exactly 300mm in the file.
+    </div>
+
+    <div class="learn-callout warn">
+      <strong>3. Open paths.</strong> Lines that do not join into closed shapes can cause the laser to cut partial outlines and leave pieces partially attached. Use <strong>Object → Path → Join</strong> in Illustrator to close open endpoints before cutting.
+    </div>
+
+    <h2>What to bring with you</h2>
+    <div class="learn-steps">
+      <div class="learn-step"><div class="step-num">1</div><div><strong>Your prepared Illustrator file</strong> on a USB drive or accessible via school login. Do not rely on email attachments — connections in labs are unreliable.</div></div>
+      <div class="learn-step"><div class="step-num">2</div><div><strong>Your material.</strong> A 1200×800mm sheet of 3mm pine plywood from Bunnings (~$18) is enough for one complete house model at 1:20 scale, with room to spare for test cuts.</div></div>
+      <div class="learn-step"><div class="step-num">3</div><div><strong>A test piece of the same material.</strong> Before cutting your full file, ask to do a 20mm × 20mm test square to confirm the laser cuts cleanly through your material thickness at the saved settings.</div></div>
+      <div class="learn-step"><div class="step-num">4</div><div><strong>Extra time.</strong> Your first session will take longer than expected. If the lab charges by the hour, budget for setup time and a test cut — not just the final run.</div></div>
+    </div>
+
+    <h2>What happens during the cut</h2>
+    <p>Once your file is in Trotec Job Control and your material is placed flat on the cutting bed, the operator will set the origin point — the corner of the file — and start the job. The laser head moves across the material, cutting each line in sequence.</p>
+    <div class="learn-callout good">
+      <strong>Do not open the lid</strong> while the machine is running. Most machines have a safety interlock that pauses the job if the lid opens — but the beam is still active. Wait for the machine to stop and the ventilation to clear before collecting your pieces.
+    </div>
+    <p>After cutting, pieces may still be sitting in place in the sheet. Do not pull them out — gently push them from below or use a flat tool to pop them free. Forcing them can splinter the edges.</p>
+
+    <h2>What to do if something goes wrong mid-cut</h2>
+    <table class="learn-table">
+      <thead><tr><th>Problem</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr><td>Material is burning or flaming</td><td>Stop the job immediately using the emergency stop. Notify the operator.</td></tr>
+        <tr><td>Laser is not cutting through</td><td>Stop the job. The power setting may be too low for your material thickness. Adjust settings and retest.</td></tr>
+        <tr><td>Pieces are in the wrong position</td><td>Check that the origin was set correctly. Re-home the machine and retry with a test square first.</td></tr>
+        <tr><td>File looks different on screen vs cut</td><td>The file may have been scaled during import. Measure and correct before proceeding.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>After the cut — collecting and protecting your pieces</h2>
+    <p>Laser-cut plywood pieces have charred edges from the cutting process. This is normal and can be cleaned up lightly with 220-grit sandpaper before assembly. The char also serves as a visual reminder of which edge was cut and which was a factory edge — useful when assembling.</p>
+    <div class="learn-callout good">
+      <strong>Number your pieces</strong> on the back before removing them from the sheet. Even if your file is perfectly organised, once pieces are loose they are easy to confuse. A pencil number on the back surface takes five seconds and saves significant frustration during assembly.
+    </div>
+
+  </div>
+
+  <hr style="border:none;border-top:1px solid var(--border);margin:3rem 0 2rem;">
+
+  <div style="background:var(--accent-light);border:1px solid var(--accent);border-radius:var(--r-lg);padding:1.5rem;">
+    <h3 style="margin-bottom:0.5rem;">Going to the lab soon?</h3>
+    <p style="margin-bottom:1rem;">If you want a tutor to check your file before you go — scale, stroke weights, and piece arrangement — we can do that over WhatsApp before your session.</p>
+    <button class="btn btn-primary" onclick="openModal()">Get your file checked →</button>
+  </div>
+
+  <div style="margin-top:3rem;">
+    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Continue reading</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <a href="dxf-export.html" style="display:block;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);text-decoration:none;" onmouseover="this.style.borderColor='var(--border-hover)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-size:0.75rem;color:var(--text-muted);font-family:var(--font-mono);">Sep 2025</span>
+        <p style="font-size:0.9rem;font-weight:500;color:var(--text);margin-top:0.3rem;">Exporting DXF from SketchUp →</p>
+      </a>
+      <a href="scale-explained.html" style="display:block;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);text-decoration:none;" onmouseover="this.style.borderColor='var(--border-hover)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-size:0.75rem;color:var(--text-muted);font-family:var(--font-mono);">Jul 2025</span>
+        <p style="font-size:0.9rem;font-weight:500;color:var(--text);margin-top:0.3rem;">Scale explained: 1:20, 1:50, 1:100 →</p>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-brand" href="../index.html"><span class="brand-mark">MD</span> ModelDesk</a>
+    <div class="footer-links">
+      <a href="../learn.html">Learn</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">About</a>
+    </div>
+    <span class="footer-copy">© 2026 ModelDesk. For designers who build.</span>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="signupModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <span class="eyebrow">// Free tutoring</span>
+    <h2>Get help with your project</h2>
+    <p>A tutor will reach out on WhatsApp.</p>
+    <form class="cta-form" id="modalForm" name="tutor-request-post2" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="tutor-request-post2">
+      <input type="hidden" name="bot-field" style="display:none">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+      <input type="email" name="email" placeholder="Email address">
+      <select name="country" required>
+        <option value="">Country</option>
+        <option>Australia</option>
+        <option>Kenya</option>
+        <option>United Kingdom</option>
+        <option>United States</option>
+        <option>South Africa</option>
+        <option>Nigeria</option>
+        <option>India</option>
+        <option>New Zealand</option>
+        <option>Canada</option>
+        <option>Other</option>
+      </select>
+      <input type="text" name="project" placeholder="What are you working on?">
+      <button type="submit" class="btn btn-primary">Connect now →</button>
+      <p class="form-note">Your tutor will message you within a few hours.</p>
+    </form>
+    <div class="form-success">
+      <h3>You're connected ✓</h3>
+      <p>Thanks <span class="success-name"></span>! A tutor will reach out on WhatsApp shortly.</p>
+    </div>
+  </div>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>
