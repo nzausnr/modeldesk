@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModelDesk — 3D Design & Model Making for Designers</title>
+  <meta name="description" content="SketchUp guides, laser cutting tutorials, and physical model-making techniques for architecture students and designers at every level.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* page-specific tweaks */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ──────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <span class="brand-mark">MD</span>
+      ModelDesk
+    </a>
+    <div class="nav-links">
+      <a href="learn.html">Learn</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-primary" onclick="openModal()">Get Help</button>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="learn.html">Learn</a>
+  <a href="blog.html">Blog</a>
+  <a href="about.html">About</a>
+  <a href="#" onclick="openModal(); return false;">Get Help</a>
+</div>
+
+<!-- ── HERO ────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="eyebrow">// For designers who build</span>
+      <h1>From 3D model<br>to physical form.</h1>
+      <p>SketchUp guides, laser cutting tutorials, and hands-on model-making techniques — for architecture students and designers at every level.</p>
+      <div class="hero-actions">
+        <a href="learn.html" class="btn btn-primary btn-lg">Start Learning →</a>
+        <a href="blog.html" class="btn btn-secondary btn-lg">Browse the Blog</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Floor plan grid decoration -->
+        <rect x="0" y="0" width="420" height="340" rx="16" fill="var(--bg-subtle)"/>
+        <!-- Grid lines -->
+        <line x1="60" y1="20" x2="60" y2="320" stroke="var(--border)" stroke-width="1"/>
+        <line x1="120" y1="20" x2="120" y2="320" stroke="var(--border)" stroke-width="1"/>
+        <line x1="180" y1="20" x2="180" y2="320" stroke="var(--border)" stroke-width="1"/>
+        <line x1="240" y1="20" x2="240" y2="320" stroke="var(--border)" stroke-width="1"/>
+        <line x1="300" y1="20" x2="300" y2="320" stroke="var(--border)" stroke-width="1"/>
+        <line x1="360" y1="20" x2="360" y2="320" stroke="var(--border)" stroke-width="1"/>
+        <line x1="20" y1="60" x2="400" y2="60" stroke="var(--border)" stroke-width="1"/>
+        <line x1="20" y1="120" x2="400" y2="120" stroke="var(--border)" stroke-width="1"/>
+        <line x1="20" y1="180" x2="400" y2="180" stroke="var(--border)" stroke-width="1"/>
+        <line x1="20" y1="240" x2="400" y2="240" stroke="var(--border)" stroke-width="1"/>
+        <line x1="20" y1="300" x2="400" y2="300" stroke="var(--border)" stroke-width="1"/>
+        <!-- House floor plan outline -->
+        <rect x="80" y="80" width="260" height="180" rx="4" fill="var(--bg-card)" stroke="var(--text)" stroke-width="2"/>
+        <!-- Interior walls -->
+        <line x1="200" y1="80" x2="200" y2="200" stroke="var(--text)" stroke-width="2"/>
+        <line x1="200" y1="200" x2="340" y2="200" stroke="var(--text)" stroke-width="2"/>
+        <!-- Doors (arc indicators) -->
+        <path d="M200 140 Q180 140 180 120" stroke="var(--text-muted)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+        <path d="M240 200 Q240 220 260 220" stroke="var(--text-muted)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+        <!-- Window indicators -->
+        <rect x="130" y="78" width="40" height="4" rx="2" fill="var(--accent)"/>
+        <rect x="250" y="78" width="50" height="4" rx="2" fill="var(--accent)"/>
+        <rect x="338" y="130" width="4" height="40" rx="2" fill="var(--accent)"/>
+        <!-- Room labels -->
+        <text x="135" y="145" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--text-muted)">living</text>
+        <text x="218" y="145" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--text-muted)">bedroom</text>
+        <text x="225" y="230" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--text-muted)">bath</text>
+        <!-- Scale indicator -->
+        <line x1="80" y1="295" x2="200" y2="295" stroke="var(--accent)" stroke-width="2"/>
+        <line x1="80" y1="290" x2="80" y2="300" stroke="var(--accent)" stroke-width="2"/>
+        <line x1="200" y1="290" x2="200" y2="300" stroke="var(--accent)" stroke-width="2"/>
+        <text x="110" y="310" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--accent)">1:20 scale</text>
+        <!-- Dimension arrow -->
+        <line x1="78" y1="80" x2="78" y2="260" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="52" y="175" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--text-muted)" transform="rotate(-90 52 175)">6.0m</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── FEATURES ────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">// What you will find here</span>
+      <h2>Everything from screen to material</h2>
+      <p>Practical guides written by designers who have built models by hand and run laser cutters — not just watched tutorials.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">📐</span>
+        <h3>3D Modelling</h3>
+        <p>SketchUp from first click to final export. Floor plans, elevations, scale, and presentation-ready renders.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">✂️</span>
+        <h3>Laser Cutting</h3>
+        <p>DXF setup, material selection, Illustrator prep, and Trotec settings — everything the software manual skips.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔧</span>
+        <h3>Manual Making</h3>
+        <p>Foam board, card, and timber. Clean cuts, strong joins, and presentation-quality finishes without a lab.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎓</span>
+        <h3>Free Tutoring</h3>
+        <p>Stuck on something specific? Connect with a design tutor on WhatsApp and get direct, project-level help.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── BLOG PREVIEW ─────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">// Latest from the blog</span>
+      <h2>Guides from practice</h2>
+      <p>Written from real project experience — not from watching someone else do it.</p>
+    </div>
+    <div class="blog-grid">
+
+      <div class="blog-card">
+        <div class="blog-card-thumb">
+          <svg viewBox="0 0 360 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="360" height="160" fill="var(--bg-subtle)"/>
+            <rect x="40" y="30" width="280" height="100" rx="8" fill="var(--bg-code)" stroke="var(--border)" stroke-width="1"/>
+            <rect x="55" y="45" width="80" height="70" fill="none" stroke="var(--accent)" stroke-width="2"/>
+            <rect x="155" y="45" width="150" height="30" rx="3" fill="var(--bg-card)" stroke="var(--border)" stroke-width="1"/>
+            <rect x="155" y="85" width="100" height="12" rx="2" fill="var(--border)"/>
+            <rect x="155" y="103" width="130" height="8" rx="2" fill="var(--border)" opacity="0.6"/>
+            <text x="75" y="86" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--accent)" text-anchor="middle">3D</text>
+          </svg>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-date">Oct 2025</span>
+            <span class="blog-tag">Laser Cutting</span>
+          </div>
+          <h3><a href="blog/laser-cut-model.html">Your first laser cut model — what to prepare before you go to the lab</a></h3>
+          <p>What the machine operator won't tell you, what Illustrator gets wrong by default, and the three things to check before you cut a single line.</p>
+          <a href="blog/laser-cut-model.html" class="read-more">Read article →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-thumb">
+          <svg viewBox="0 0 360 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="360" height="160" fill="var(--bg-subtle)"/>
+            <line x1="40" y1="130" x2="320" y2="130" stroke="var(--border)" stroke-width="1.5"/>
+            <rect x="60" y="50" width="30" height="80" rx="3" fill="var(--accent)" opacity="0.8"/>
+            <rect x="110" y="70" width="30" height="60" rx="3" fill="var(--accent)" opacity="0.6"/>
+            <rect x="160" y="40" width="30" height="90" rx="3" fill="var(--accent)"/>
+            <rect x="210" y="65" width="30" height="65" rx="3" fill="var(--accent)" opacity="0.7"/>
+            <text x="75" y="148" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--text-muted)" text-anchor="middle">1:10</text>
+            <text x="125" y="148" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--text-muted)" text-anchor="middle">1:20</text>
+            <text x="175" y="148" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--text-muted)" text-anchor="middle">1:50</text>
+            <text x="225" y="148" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--text-muted)" text-anchor="middle">1:100</text>
+          </svg>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-date">Sep 2025</span>
+            <span class="blog-tag">SketchUp</span>
+          </div>
+          <h3><a href="blog/dxf-export.html">How to export a DXF from SketchUp and actually use it</a></h3>
+          <p>SketchUp exports DXF files in a way that confuses most laser cutters and Illustrator setups. Here is exactly how to fix that before anything goes wrong.</p>
+          <a href="blog/dxf-export.html" class="read-more">Read article →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-thumb">
+          <svg viewBox="0 0 360 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="360" height="160" fill="var(--bg-subtle)"/>
+            <rect x="50" y="40" width="120" height="80" rx="6" fill="var(--bg-card)" stroke="var(--border)" stroke-width="1.5"/>
+            <rect x="190" y="40" width="120" height="80" rx="6" fill="var(--bg-card)" stroke="var(--border)" stroke-width="1.5"/>
+            <text x="110" y="86" font-family="JetBrains Mono, monospace" font-size="22" fill="var(--text-muted)" text-anchor="middle" opacity="0.5">□</text>
+            <text x="250" y="86" font-family="JetBrains Mono, monospace" font-size="22" fill="var(--accent)" text-anchor="middle">■</text>
+            <text x="110" y="105" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--text-muted)" text-anchor="middle">manual cut</text>
+            <text x="250" y="105" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--accent)" text-anchor="middle">laser cut</text>
+          </svg>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-date">May 2025</span>
+            <span class="blog-tag">Model Making</span>
+          </div>
+          <h3><a href="blog/scale-explained.html">Scale explained: 1:20, 1:50, 1:100 — and why it matters for your model</a></h3>
+          <p>Scale is where most first models go wrong. A clear explanation of how scale ratios work and how to calculate every dimension before you cut.</p>
+          <a href="blog/scale-explained.html" class="read-more">Read article →</a>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="blog.html" class="btn btn-secondary">View all articles →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── LEARN PREVIEW ────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">// The learning hub</span>
+      <h2>Go deep on what matters</h2>
+      <p>Structured guides organised by topic — from understanding a file format to finishing a physical model.</p>
+    </div>
+    <div class="learn-preview-grid">
+      <div class="learn-preview-card">
+        <span class="lp-icon">📐</span>
+        <div class="lp-count">4 guides</div>
+        <h3>Getting Started</h3>
+        <p>SketchUp fundamentals, file types, and how to navigate a 3D model on any device.</p>
+        <div class="lp-links">
+          <a href="learn.html">SketchUp for beginners</a>
+          <a href="learn.html">Understanding .skp and .dxf</a>
+          <a href="learn.html">Navigating your model</a>
+          <a href="learn.html">Exporting floor plans</a>
+        </div>
+      </div>
+      <div class="learn-preview-card">
+        <span class="lp-icon">✂️</span>
+        <div class="lp-count">4 guides</div>
+        <h3>From Screen to Physical</h3>
+        <p>Scale, DXF setup, laser cutting step by step, and assembling a model from cut parts.</p>
+        <div class="lp-links">
+          <a href="learn.html">What is scale and why it matters</a>
+          <a href="learn.html">Exporting DXF for cutting</a>
+          <a href="learn.html">Laser cutting at school</a>
+          <a href="learn.html">Building the physical model</a>
+        </div>
+      </div>
+      <div class="learn-preview-card">
+        <span class="lp-icon">🔧</span>
+        <div class="lp-count">3 guides</div>
+        <h3>Manual Making</h3>
+        <p>For when the laser cutter is booked, unavailable, or simply not the right tool for the job.</p>
+        <div class="lp-links">
+          <a href="learn.html">Materials guide</a>
+          <a href="learn.html">Clean cutting techniques</a>
+          <a href="learn.html">Assembly and finishing</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="learn.html" class="btn btn-secondary">Open the Learning Hub →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── SIGNUP / TUTOR CTA ───────────────────────────────────── -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="eyebrow">// Free 1-on-1 help</span>
+      <h2>Connect with a design tutor</h2>
+      <p>Stuck on a specific part of your project? Our tutors connect with you directly on WhatsApp and help you through it — no booking, no fee.</p>
+
+      <form class="cta-form" id="mainForm" name="tutor-request" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="tutor-request">
+        <input type="hidden" name="bot-field" style="display:none">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your name" required>
+          <select name="country" required>
+            <option value="">Country</option>
+            <option>Australia</option>
+            <option>Kenya</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>South Africa</option>
+            <option>Nigeria</option>
+            <option>India</option>
+            <option>New Zealand</option>
+            <option>Canada</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <input type="tel" name="whatsapp" placeholder="WhatsApp number (with country code, e.g. +61 4xx xxx xxx)" required>
+        <input type="email" name="email" placeholder="Email address">
+        <input type="text" name="project" placeholder="What are you working on? (e.g. architecture model, school project)">
+        <button type="submit" class="btn btn-primary btn-lg">Connect with a tutor →</button>
+        <p class="form-note">A tutor will message you on WhatsApp within a few hours. Your details are never shared with third parties.</p>
+      </form>
+      <div class="form-success">
+        <h3>You're connected ✓</h3>
+        <p>Thanks <span class="success-name"></span>! A tutor will reach out on WhatsApp shortly. Keep an eye on your messages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <a class="footer-brand" href="index.html">
+      <span class="brand-mark">MD</span>
+      ModelDesk
+    </a>
+    <div class="footer-links">
+      <a href="learn.html">Learn</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="#" onclick="openModal(); return false;">Get Help</a>
+    </div>
+    <span class="footer-copy">© 2025 ModelDesk. For designers who build.</span>
+  </div>
+</footer>
+
+<!-- ── MODAL ────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="signupModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <span class="eyebrow">// Free tutoring</span>
+    <h2>Get help with your project</h2>
+    <p>Tell us what you are working on and a tutor will reach out on WhatsApp.</p>
+    <form class="cta-form" id="modalForm" name="tutor-request-modal" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="tutor-request-modal">
+      <input type="hidden" name="bot-field" style="display:none">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="tel" name="whatsapp" placeholder="WhatsApp number (e.g. +61 4xx xxx xxx)" required>
+      <input type="email" name="email" placeholder="Email address">
+      <select name="country" required>
+        <option value="">Country</option>
+        <option>Australia</option>
+        <option>Kenya</option>
+        <option>United Kingdom</option>
+        <option>United States</option>
+        <option>South Africa</option>
+        <option>Nigeria</option>
+        <option>India</option>
+        <option>New Zealand</option>
+        <option>Canada</option>
+        <option>Other</option>
+      </select>
+      <input type="text" name="project" placeholder="What are you working on?">
+      <button type="submit" class="btn btn-primary">Connect now →</button>
+      <p class="form-note">Your tutor will message you on WhatsApp within a few hours.</p>
+    </form>
+    <div class="form-success">
+      <h3>You're connected ✓</h3>
+      <p>Thanks <span class="success-name"></span>! A tutor will reach out on WhatsApp shortly.</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
