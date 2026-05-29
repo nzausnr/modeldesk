@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn — ModelDesk</title>
+  <meta name="description" content="Structured guides on SketchUp, DXF export, laser cutting, and physical model making for architecture students and designers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── NAVBAR ──────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <span class="brand-mark">MD</span>
+      ModelDesk
+    </a>
+    <div class="nav-links">
+      <a href="learn.html" class="active">Learn</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-primary" onclick="openModal()">Get Help</button>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="learn.html">Learn</a>
+  <a href="blog.html">Blog</a>
+  <a href="about.html">About</a>
+  <a href="#" onclick="openModal(); return false;">Get Help</a>
+</div>
+
+<!-- ── LEARN LAYOUT ─────────────────────────────────────────── -->
+<div class="learn-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="learn-sidebar">
+
+    <div class="sidebar-group">Getting Started</div>
+    <button class="sidebar-link active" data-article="sketchup-basics">
+      <span class="sidebar-icon">📐</span> SketchUp for beginners
+    </button>
+    <button class="sidebar-link" data-article="file-types">
+      <span class="sidebar-icon">📁</span> Understanding your files
+    </button>
+    <button class="sidebar-link" data-article="navigate">
+      <span class="sidebar-icon">🖱</span> Navigating a 3D model
+    </button>
+    <button class="sidebar-link" data-article="export-plans">
+      <span class="sidebar-icon">🖨</span> Exporting floor plans
+    </button>
+
+    <div class="sidebar-group">From Screen to Physical</div>
+    <button class="sidebar-link" data-article="scale">
+      <span class="sidebar-icon">📏</span> Understanding scale
+    </button>
+    <button class="sidebar-link" data-article="dxf">
+      <span class="sidebar-icon">✂️</span> Exporting DXF for cutting
+    </button>
+    <button class="sidebar-link" data-article="laser-cutting">
+      <span class="sidebar-icon">⚡</span> Laser cutting at school
+    </button>
+    <button class="sidebar-link" data-article="build-model">
+      <span class="sidebar-icon">🏗</span> Building the physical model
+    </button>
+
+    <div class="sidebar-group">Manual Making</div>
+    <button class="sidebar-link" data-article="materials">
+      <span class="sidebar-icon">📦</span> Materials guide
+    </button>
+    <button class="sidebar-link" data-article="cutting">
+      <span class="sidebar-icon">🔧</span> Clean cutting techniques
+    </button>
+    <button class="sidebar-link" data-article="assembly">
+      <span class="sidebar-icon">🧩</span> Assembly and finishing
+    </button>
+
+    <div class="sidebar-group">Software</div>
+    <button class="sidebar-link" data-article="sketchup-versions">
+      <span class="sidebar-icon">💻</span> SketchUp Free vs Pro
+    </button>
+    <button class="sidebar-link" data-article="illustrator">
+      <span class="sidebar-icon">🎨</span> Illustrator for making
+    </button>
+
+    <div class="sidebar-cta">
+      <p>Stuck on something specific? A tutor can help directly.</p>
+      <button class="btn btn-primary" onclick="openModal()">Get 1-on-1 help →</button>
+    </div>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="learn-main">
+
+    <!-- ── SKETCHUP BASICS ──────────────────────────────────── -->
+    <article class="learn-article active" id="art-sketchup-basics">
+      <div class="learn-article-eyebrow">// Getting Started</div>
+      <h1>SketchUp for beginners</h1>
+      <p>SketchUp is a 3D modelling tool that architects, designers, and students use to design buildings and spaces before building them. The free web version does everything most school and university projects need.</p>
+
+      <h2>What you need to get started</h2>
+      <div class="learn-steps">
+        <div class="learn-step"><div class="step-num">1</div><div>Go to <strong>sketchup.com</strong> and create a free account. Use your school or personal email — it does not matter which.</div></div>
+        <div class="learn-step"><div class="step-num">2</div><div>Open <strong>SketchUp for Web</strong> from the browser. No download needed. It works on any laptop — Mac or Windows.</div></div>
+        <div class="learn-step"><div class="step-num">3</div><div>When the app loads, select <strong>"Simple Template — Metres"</strong> as your starting template. This sets the default unit to metres, which is what you want for architectural work.</div></div>
+        <div class="learn-step"><div class="step-num">4</div><div>The large grey area in the centre is your <strong>model space</strong>. The toolbar on the left has your drawing tools. Start by just drawing a rectangle to get comfortable with how the space works.</div></div>
+      </div>
+
+      <h2>The three most important tools</h2>
+      <div class="learn-callout good">
+        <strong>Rectangle tool (R)</strong> — draws a flat rectangle. Type dimensions directly after clicking, for example <code>3000,6000</code> and press Enter. SketchUp works in millimetres by default even when your template says metres — so 3000 = 3 metres.
+      </div>
+      <div class="learn-callout good">
+        <strong>Push/Pull tool (P)</strong> — click any flat surface and drag upward to give it height. This is how flat floor plans become 3D walls. It is the single most used tool in SketchUp.
+      </div>
+      <div class="learn-callout good">
+        <strong>Orbit tool (O) or middle mouse button</strong> — rotates your view around the model. Hold the scroll wheel and drag. Scroll to zoom in and out.
+      </div>
+
+      <h2>Setting up your model correctly from the start</h2>
+      <p>Most problems in SketchUp come from a messy model — geometry that is not grouped, faces that are reversed, or walls that are not closed. Follow these habits from the beginning:</p>
+      <table class="learn-table">
+        <thead><tr><th>Habit</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td>Group everything you draw</td><td>Prevents geometry from sticking together and becoming impossible to separate later</td></tr>
+          <tr><td>Draw on the ground plane first</td><td>Keeps your model oriented correctly — walls go up from the floor, not sideways</td></tr>
+          <tr><td>Use layers (Tags) to organise</td><td>Lets you hide and show parts of the model — walls, furniture, roof — independently</td></tr>
+          <tr><td>Save versions as you go</td><td>SketchUp for Web auto-saves but making named copies lets you go back to earlier states</td></tr>
+        </tbody>
+      </table>
+
+      <div class="learn-callout warn">
+        <strong>Common mistake:</strong> Drawing walls without closing them into a solid shape. SketchUp creates a face automatically when you close a shape — if your walls are not connecting properly, the Push/Pull tool will not work as expected.
+      </div>
+    </article>
+
+    <!-- ── FILE TYPES ───────────────────────────────────────── -->
+    <article class="learn-article" id="art-file-types">
+      <div class="learn-article-eyebrow">// Getting Started</div>
+      <h1>Understanding your files</h1>
+      <p>When working with 3D design software you will encounter several different file types. Understanding what each one is for prevents a lot of confusion when sharing, printing, or cutting your work.</p>
+
+      <h2>The main file types</h2>
+      <table class="learn-table">
+        <thead><tr><th>Extension</th><th>What it is</th><th>Opens in</th></tr></thead>
+        <tbody>
+          <tr><td><code>.skp</code></td><td>SketchUp model file — your full 3D design with materials, layers, and geometry</td><td>SketchUp only</td></tr>
+          <tr><td><code>.dxf</code></td><td>Drawing Exchange Format — 2D line drawings used by laser cutters and CNC machines</td><td>Illustrator, AutoCAD, laser cutter software</td></tr>
+          <tr><td><code>.dwg</code></td><td>AutoCAD drawing format — similar to DXF but more complex. Used in professional practice</td><td>AutoCAD, Illustrator (with plugin)</td></tr>
+          <tr><td><code>.pdf</code></td><td>Portable document — used to share floor plans and presentations. Not editable without special software</td><td>Any PDF reader</td></tr>
+          <tr><td><code>.png / .jpg</code></td><td>Image exports of your model views or renders</td><td>Any image viewer</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The textures folder</h2>
+      <div class="learn-callout warn">
+        <strong>Important:</strong> When SketchUp saves a model, it sometimes creates a separate folder with the same name ending in <code>.textures</code> — for example <code>LOFT.skp</code> and <code>LOFT.textures</code>. These two must always stay in the same folder together. Moving the <code>.skp</code> file without the textures folder will strip all materials from your model.
+      </div>
+
+      <h2>Which file do you need for each task?</h2>
+      <div class="learn-callout">
+        <strong>To share your 3D model with a tutor or teacher:</strong> send the <code>.skp</code> file and the <code>.textures</code> folder together in a zip.
+      </div>
+      <div class="learn-callout">
+        <strong>To laser cut your model:</strong> you need a <code>.dxf</code> file exported from SketchUp. The <code>.skp</code> file cannot go directly to a laser cutter.
+      </div>
+      <div class="learn-callout">
+        <strong>To show your teacher your work:</strong> open the <code>.skp</code> file in SketchUp for Web and orbit around it. Or export images using <strong>File → Export → 2D Graphic</strong>.
+      </div>
+    </article>
+
+    <!-- ── NAVIGATE ─────────────────────────────────────────── -->
+    <article class="learn-article" id="art-navigate">
+      <div class="learn-article-eyebrow">// Getting Started</div>
+      <h1>Navigating a 3D model</h1>
+      <p>Opening a SketchUp file for the first time can be disorienting — especially if the model is large or the view is inside a wall. These are the controls you need to find your way around.</p>
+
+      <h2>On a laptop or desktop</h2>
+      <div class="learn-steps">
+        <div class="learn-step"><div class="step-num">1</div><div><strong>Orbit</strong> — hold the scroll wheel (middle mouse button) and drag. This rotates your view around the model.</div></div>
+        <div class="learn-step"><div class="step-num">2</div><div><strong>Zoom</strong> — scroll up to zoom in, scroll down to zoom out. If scrolling does not work, click somewhere in the model first.</div></div>
+        <div class="learn-step"><div class="step-num">3</div><div><strong>Pan</strong> — hold Shift + scroll wheel and drag to move sideways without rotating.</div></div>
+        <div class="learn-step"><div class="step-num">4</div><div><strong>Reset view</strong> — press <code>Shift + Z</code> to zoom to fit the entire model on screen. Use this when you get lost.</div></div>
+      </div>
+
+      <h2>On a phone or tablet</h2>
+      <div class="learn-callout">
+        <strong>One finger drag</strong> — orbits around the model.<br><br>
+        <strong>Two finger pinch</strong> — zooms in and out.<br><br>
+        <strong>Two finger drag</strong> — pans (moves) the view.
+      </div>
+      <div class="learn-callout warn">
+        <strong>Note:</strong> SketchUp for Web works on mobile browsers but is limited. You can view and orbit models, but drawing and editing is difficult without a mouse. For serious work, use a laptop.
+      </div>
+
+      <h2>Standard views</h2>
+      <p>Use the Views menu (Camera → Standard Views) to jump to precise views useful for taking screenshots for your portfolio:</p>
+      <table class="learn-table">
+        <thead><tr><th>View</th><th>Use it for</th></tr></thead>
+        <tbody>
+          <tr><td>Top</td><td>Floor plan — looking straight down from above</td></tr>
+          <tr><td>Front / Back / Left / Right</td><td>Elevation drawings — looking at the building from the side</td></tr>
+          <tr><td>Iso</td><td>Isometric view — a 3D corner view that shows the building clearly without distortion</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- ── EXPORT PLANS ─────────────────────────────────────── -->
+    <article class="learn-article" id="art-export-plans">
+      <div class="learn-article-eyebrow">// Getting Started</div>
+      <h1>Exporting floor plans from SketchUp</h1>
+      <p>To use your SketchUp design in a document, presentation, or portfolio, you need to export it as an image or PDF. Here is how to do that cleanly.</p>
+
+      <h2>Exporting as an image (PNG)</h2>
+      <div class="learn-steps">
+        <div class="learn-step"><div class="step-num">1</div><div>Set your view to <strong>Top</strong> (Camera → Standard Views → Top) for a floor plan, or Front/Back for an elevation.</div></div>
+        <div class="learn-step"><div class="step-num">2</div><div>Turn on <strong>Parallel Projection</strong> (Camera → Parallel Projection). This removes perspective distortion so lines are truly straight — essential for technical drawings.</div></div>
+        <div class="learn-step"><div class="step-num">3</div><div>Go to <strong>File → Export → 2D Graphic</strong> and choose PNG. Set the width to at least 3000px for a crisp image.</div></div>
+        <div class="learn-step"><div class="step-num">4</div><div>The exported image will have a white or transparent background. You can place it directly into Word, Canva, Affinity Designer, or any layout software.</div></div>
+      </div>
+
+      <h2>Showing dimensioned floor plans</h2>
+      <div class="learn-callout">
+        <strong>SketchUp Free does not have a built-in dimensioning tool</strong> for 2D drawings. The workaround: export the PNG, then add dimension annotations in Canva, Adobe Illustrator, or Affinity Designer on top of the image. For professional dimensioned drawings, SketchUp Pro includes LayOut — but Free is sufficient for most school portfolios.
+      </div>
+    </article>
+
+    <!-- ── SCALE ─────────────────────────────────────────────── -->
+    <article class="learn-article" id="art-scale">
+      <div class="learn-article-eyebrow">// From Screen to Physical</div>
+      <h1>Understanding scale</h1>
+      <p>Scale is the ratio between your drawing or model and the real thing. Get it wrong and your laser cut pieces will not fit together. Get it right and everything snaps into place exactly as designed.</p>
+
+      <h2>What scale ratios mean</h2>
+      <table class="learn-table">
+        <thead><tr><th>Scale</th><th>What it means</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1:1</strong></td><td>Full size — model is the same size as reality</td><td>A tile detail or small component</td></tr>
+          <tr><td><strong>1:10</strong></td><td>Model is 10× smaller than real</td><td>A bathroom fixture, detailed wall section</td></tr>
+          <tr><td><strong>1:20</strong></td><td>Model is 20× smaller than real</td><td class="good">Most common for student models — a 6m house becomes 30cm</td></tr>
+          <tr><td><strong>1:50</strong></td><td>Model is 50× smaller than real</td><td>A small building or apartment layout</td></tr>
+          <tr><td><strong>1:100</strong></td><td>Model is 100× smaller than real</td><td>A full house or site overview</td></tr>
+          <tr><td><strong>1:200</strong></td><td>Model is 200× smaller than real</td><td>A large building or site plan</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Calculating dimensions at 1:20</h2>
+      <p>To find the model size of any real dimension at 1:20, divide by 20:</p>
+      <div class="learn-callout">
+        <strong>Formula:</strong> Model size = Real size ÷ Scale factor<br><br>
+        6000mm (6m wall) ÷ 20 = <strong>300mm (30cm)</strong><br>
+        3000mm (3m wall) ÷ 20 = <strong>150mm (15cm)</strong><br>
+        2700mm (ceiling height) ÷ 20 = <strong>135mm (13.5cm)</strong>
+      </div>
+
+      <h2>Setting scale in SketchUp for export</h2>
+      <div class="learn-steps">
+        <div class="learn-step"><div class="step-num">1</div><div>SketchUp models are always built at real size (1:1). You do not model at scale — you model at full size and the scale is applied at export.</div></div>
+        <div class="learn-step"><div class="step-num">2</div><div>When exporting a DXF for laser cutting, set the export scale in the export dialog. Select <strong>1:20</strong> to get a file where 1mm in the file = 20mm in reality.</div></div>
+        <div class="learn-step"><div class="step-num">3</div><div>Always verify by checking one known dimension in Illustrator after import. If a 6m wall measures 300mm in the file, the scale is correct.</div></div>
+      </div>
+
+      <div class="learn-callout warn">
+        <strong>Check before cutting:</strong> Open the DXF in Illustrator and measure one wall with the ruler. Confirm it matches your expected scaled dimension before sending to the laser cutter. A scale error discovered after cutting wastes expensive material.
+      </div>
+    </article>
+
+    <!-- ── DXF ───────────────────────────────────────────────── -->
+    <article class="learn-article" id="art-dxf">
+      <div class="learn-article-eyebrow">// From Screen to Physical</div>
+      <h1>Exporting a DXF from SketchUp</h1>
+      <p>A DXF file is a 2D line drawing that laser cutters and CNC machines understand. Getting the export right from SketchUp avoids hours of fixing problems in Illustrator later.</p>
+
+      <h2>What a DXF file contains</h2>
+      <div class="learn-callout">
+        A DXF is just lines. No fills, no materials, no colours — just the outlines of your walls, windows, and doors projected flat onto a 2D plane. The laser cutter reads each line and cuts along it. This is why the setup has to be exact.
+      </div>
+
+      <h2>Exporting from SketchUp step by step</h2>
+      <div class="learn-steps">
+        <div class="learn-step"><div class="step-num">1</div><div>Set your view to <strong>Top</strong> (Camera → Standard Views → Top) and enable <strong>Parallel Projection</strong> (Camera → Parallel Projection). The view must be perfectly flat — no perspective.</div></div>
+        <div class="learn-step"><div class="step-num">2</div><div>Hide any layers you do not want exported — furniture, materials, annotations. Only the geometry you want cut should be visible.</div></div>
+        <div class="learn-step"><div class="step-num">3</div><div>Go to <strong>File → Export → CAD Format (.dwg/.dxf)</strong>. Choose <strong>DXF</strong> as the format.</div></div>
+        <div class="learn-step"><div class="step-num">4</div><div>In the export options, set the scale. For a 1:20 model, set <strong>In Drawing: 1mm = In Model: 20mm</strong>.</div></div>
+        <div class="learn-step"><div class="step-num">5</div><div>Save the file. You will get a <code>.dxf</code> file — this is what you take to the laser cutter.</div></div>
+      </div>
+
+      <h2>Fixing the DXF in Illustrator before cutting</h2>
+      <p>SketchUp DXF exports often need cleaning up before they are ready to cut:</p>
+      <table class="learn-table">
+        <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Lines have thick stroke weights</td><td>Select all (Cmd/Ctrl + A), set stroke to <strong>0.001pt (Hairline)</strong></td></tr>
+          <tr><td>Lines have fill colours</td><td>Select all, set fill to <strong>None</strong></td></tr>
+          <tr><td>Scale is wrong</td><td>Select all, use Object → Transform → Scale to correct it</td></tr>
+          <tr><td>Duplicate lines on top of each other</td><td>Select all → Object → Path → Clean Up</td></tr>
+          <tr><td>Lines are not joined into closed paths</td><td>Use the Join tool (Cmd/Ctrl + J) to close open ends</td></tr>
+        </tbody>
+      </table>
+
+      <div class="learn-callout warn">
+        <strong>Hairline stroke is critical.</strong> A stroke weight of 0.5pt or 1pt tells the laser cutter to engrave rather than cut. Only hairline (0.001pt) or the specific cut colour in Trotec Job Control will produce a clean cut through the material.
+      </div>
+    </article>
+
+    <!-- ── LASER CUTTING ────────────────────────────────────── -->
+    <article class="learn-article" id="art-laser-cutting">
+      <div class="learn-article-eyebrow">// From Screen to Physical</div>
+      <h1>Laser cutting at school</h1>
+      <p>A laser cutter uses a focused beam of light to cut through thin materials with extreme precision. For scale architectural models, it produces results that would take hours to achieve by hand. Here is how the process works from file to finished cut.</p>
+
+      <h2>What the laser cutter needs from you</h2>
+      <div class="learn-callout">
+        The laser cutter reads a prepared file — usually sent from <strong>Adobe Illustrator</strong> via <strong>Trotec Job Control</strong> software. It cannot open a SketchUp file. You must go through the DXF export and Illustrator preparation steps before anything can be cut.
+      </div>
+
+      <h2>The full process</h2>
+      <div class="learn-steps">
+        <div class="learn-step"><div class="step-num">1</div><div><strong>Prepare your DXF</strong> — export from SketchUp, open in Illustrator, set all strokes to hairline, remove fills, verify scale.</div></div>
+        <div class="learn-step"><div class="step-num">2</div><div><strong>Set cut colours</strong> — Trotec laser cutters use colour to distinguish cut lines from engrave lines. Red (RGB 255,0,0) = cut. Black = engrave. Make all your cut lines red in Illustrator before sending.</div></div>
+        <div class="learn-step"><div class="step-num">3</div><div><strong>Place your material</strong> — lay your plywood or boxboard flat on the laser cutter bed. Make sure it is flat — any curve or warp causes the laser to go out of focus and produce a ragged cut.</div></div>
+        <div class="learn-step"><div class="step-num">4</div><div><strong>Set material parameters</strong> — in Trotec Job Control, select your material type and thickness. For 3mm pine plywood, a teacher or lab technician will have a saved preset. Ask before guessing.</div></div>
+        <div class="learn-step"><div class="step-num">5</div><div><strong>Run a test cut</strong> — always cut a small test piece (a 20mm square) before cutting your full file. Confirms the laser is cutting through cleanly without burning.</div></div>
+        <div class="learn-step"><div class="step-num">6</div><div><strong>Cut and collect pieces</strong> — let the machine finish completely before opening. Pieces may stay in position — carefully pop them out with a flat tool. Do not force them.</div></div>
+      </div>
+
+      <h2>Materials and what to use them for</h2>
+      <table class="learn-table">
+        <thead><tr><th>Material</th><th>Thickness</th><th>Best for</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Pine plywood</td><td>3mm</td><td class="good">Walls, floors, structural parts</td><td>Clean cut, strong, looks good natural or painted</td></tr>
+          <tr><td>Boxboard / greyboard</td><td>2mm</td><td>Roofs, flat surfaces</td><td>Cheaper than plywood, slightly less rigid</td></tr>
+          <tr><td>Clear acetate</td><td>0.5mm</td><td>Windows, glazing</td><td>Laser scores rather than cuts — use low power</td></tr>
+          <tr><td>MDF</td><td>3mm</td><td>Base boards</td><td>Cuts cleanly but produces more dust and fumes</td></tr>
+          <tr><td>Cardstock / card</td><td>0.3mm</td><td>Fine details, test cuts</td><td>Good for prototyping before cutting expensive material</td></tr>
+        </tbody>
+      </table>
+
+      <div class="learn-callout warn">
+        <strong>Never cut:</strong> PVC, vinyl, or any plastic containing chlorine. These release toxic fumes when laser cut and will damage the machine. If unsure what a material is made of, do not cut it.
+      </div>
+    </article>
+
+    <!-- ── BUILD MODEL ──────────────────────────────────────── -->
+    <article class="learn-article" id="art-build-model">
+      <div class="learn-article-eyebrow">// From Screen to Physical</div>
+      <h1>Building the physical model</h1>
+      <p>Laser cut pieces are precise, but assembling them into a clean model takes care and the right technique. Rushed assembly is where most models go wrong after a perfect cut.</p>
+
+      <h2>What you need</h2>
+      <div class="learn-callout">
+        <strong>PVA glue</strong> — slow-setting wood glue. Gives you time to adjust before it sets. Use a thin, even layer.<br><br>
+        <strong>Masking tape</strong> — holds pieces at right angles while the glue dries. Remove cleanly once set.<br><br>
+        <strong>Set square or right-angle tool</strong> — checks that your walls are truly perpendicular.<br><br>
+        <strong>Craft knife and cutting mat</strong> — for trimming any pieces that need minor adjustment.
+      </div>
+
+      <h2>Assembly sequence</h2>
+      <div class="learn-steps">
+        <div class="learn-step"><div class="step-num">1</div><div><strong>Dry fit first</strong> — place all pieces together without glue to check they fit. Identify any pieces that need trimming before you commit to glue.</div></div>
+        <div class="learn-step"><div class="step-num">2</div><div><strong>Start with the base</strong> — glue the floor/ground plate to your base board first. Let it set fully before adding walls.</div></div>
+        <div class="learn-step"><div class="step-num">3</div><div><strong>Build walls in pairs</strong> — glue two opposite walls first, use tape to hold at 90°, let set. Then add the other two walls. This is more stable than trying to hold all four at once.</div></div>
+        <div class="learn-step"><div class="step-num">4</div><div><strong>Add internal walls</strong> — once the outer shell is set, slot internal partition walls in. Apply glue to the bottom and side edges that contact other surfaces.</div></div>
+        <div class="learn-step"><div class="step-num">5</div><div><strong>Roof last</strong> — the roof goes on after all interior work is done. If it is removable to show the interior, do not glue it — just fit it snugly.</div></div>
+      </div>
+
+      <h2>Tips for a clean finish</h2>
+      <div class="learn-callout good">
+        <strong>Sand the laser-cut edges</strong> lightly with 220-grit sandpaper before gluing. Laser cutting leaves a slight char on the edges — a quick sand gives a cleaner joint and better glue adhesion.
+      </div>
+      <div class="learn-callout good">
+        <strong>Use a pin or toothpick</strong> to apply glue to small pieces and tight joints. Applying PVA directly from the bottle usually results in too much glue and squeeze-out that is hard to clean up.
+      </div>
+    </article>
+
+    <!-- ── MATERIALS ────────────────────────────────────────── -->
+    <article class="learn-article" id="art-materials">
+      <div class="learn-article-eyebrow">// Manual Making</div>
+      <h1>Materials guide</h1>
+      <p>Whether you have access to a laser cutter or not, understanding the properties of modelling materials lets you choose the right one for each part of your model and avoid common problems.</p>
+
+      <h2>The main materials for architectural models</h2>
+      <table class="learn-table">
+        <thead><tr><th>Material</th><th>Properties</th><th>Best for</th><th>Available at</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Foam board (forex / foamex)</strong></td><td>Lightweight, easy to cut with a craft knife, clean white surface</td><td class="good">Walls, floors, large flat surfaces — best all-round beginner material</td><td>Art supply stores, online</td></tr>
+          <tr><td><strong>Boxboard / greyboard</strong></td><td>Dense card, smooth surface, cuts cleanly with a sharp blade</td><td>Roofs, thin walls, small-scale work</td><td>Art supply stores</td></tr>
+          <tr><td><strong>Balsa wood</strong></td><td>Very lightweight, easy to cut and sand, takes paint well</td><td>Structural frames, fine details, furniture</td><td>Hobby and craft stores</td></tr>
+          <tr><td><strong>Pine plywood (3mm)</strong></td><td>Strong, realistic wood finish, best used with laser cutter</td><td>High-quality structural models with laser access</td><td>Bunnings, hardware stores</td></tr>
+          <tr><td><strong>Card / mount board</strong></td><td>Thin, flexible, cuts with scissors or knife</td><td>Prototyping, test assemblies, quick mock-ups</td><td>Stationery and art stores</td></tr>
+          <tr><td><strong>Acetate / transparency film</strong></td><td>Clear rigid plastic sheet</td><td>Windows and glazed surfaces</td><td>Office supply stores</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Foam board — the essential material</h2>
+      <p>Foam board (sold as foamex, forex, or foam core depending on the country) is the standard material for architectural model making when laser cutting is not available. It is what most architecture students around the world start with. Its advantages:</p>
+      <div class="learn-callout good">
+        <strong>Why foam board works well:</strong><br><br>
+        — Cuts cleanly with a sharp craft knife and metal ruler<br>
+        — Lightweight enough that models do not need a heavy base<br>
+        — White surface photographs well and looks clean in presentations<br>
+        — Available in multiple thicknesses (3mm, 5mm, 10mm)<br>
+        — Inexpensive compared to wood or acrylic
+      </div>
+    </article>
+
+    <!-- ── CUTTING ───────────────────────────────────────────── -->
+    <article class="learn-article" id="art-cutting">
+      <div class="learn-article-eyebrow">// Manual Making</div>
+      <h1>Clean cutting techniques</h1>
+      <p>The difference between a professional-looking model and an amateur one is almost entirely in the cutting. Clean, straight edges with tight joints make any material look good.</p>
+
+      <h2>The rules of clean cuts</h2>
+      <div class="learn-steps">
+        <div class="learn-step"><div class="step-num">1</div><div><strong>Always use a metal ruler, never a plastic one.</strong> A sharp blade will climb onto a plastic ruler and cut your fingers. Metal only.</div></div>
+        <div class="learn-step"><div class="step-num">2</div><div><strong>Use a fresh blade for every session.</strong> A dull blade tears rather than cuts — it requires more force, which causes the blade to wander off the line. Snap a segment off the blade before starting.</div></div>
+        <div class="learn-step"><div class="step-num">3</div><div><strong>Score first, cut through on the second pass.</strong> For foam board: score the top surface on the first pass, then cut fully through on the second. Do not try to cut through in one heavy stroke.</div></div>
+        <div class="learn-step"><div class="step-num">4</div><div><strong>Hold the ruler down firmly.</strong> Place two or three fingers along the length of the ruler, pressing down firmly. The ruler should not move at all during the cut.</div></div>
+        <div class="learn-step"><div class="step-num">5</div><div><strong>Cut on a proper cutting mat.</strong> A self-healing cutting mat protects the table and gives the blade a clean surface to finish against. The floor or a wooden board will produce rough cuts.</div></div>
+      </div>
+
+      <h2>Mitre joints vs butt joints</h2>
+      <table class="learn-table">
+        <thead><tr><th>Joint type</th><th>How to cut</th><th>Best for</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Butt joint</strong></td><td>Straight 90° cut. One piece butts flat against the end of another</td><td class="good">Beginners — simple, quick, strong enough for most models</td></tr>
+          <tr><td><strong>Mitre joint</strong></td><td>Both pieces cut at 45°. Join at a corner to hide both edges</td><td>High-quality presentation models where the edge of the material should not show</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- ── ASSEMBLY ──────────────────────────────────────────── -->
+    <article class="learn-article" id="art-assembly">
+      <div class="learn-article-eyebrow">// Manual Making</div>
+      <h1>Assembly and finishing</h1>
+      <p>A well-assembled model holds together cleanly, sits flat, and looks intentional. These techniques apply whether you are working with laser-cut plywood or hand-cut foam board.</p>
+
+      <h2>Glue selection</h2>
+      <table class="learn-table">
+        <thead><tr><th>Glue</th><th>Sets in</th><th>Best for</th><th>Avoid for</th></tr></thead>
+        <tbody>
+          <tr><td><strong>PVA (wood glue)</strong></td><td>30–60 min</td><td class="good">Wood, card, foam board — best all-round choice</td><td>Acetate / plastic</td></tr>
+          <tr><td><strong>UHU / contact cement</strong></td><td>Instant</td><td>Foam board, quick fixes</td><td>Large surfaces — bonds instantly, no adjustment</td></tr>
+          <tr><td><strong>Super glue (CA glue)</strong></td><td>Seconds</td><td>Small wood joints, fine details</td><td>Foam — dissolves it</td></tr>
+          <tr><td><strong>Double-sided tape</strong></td><td>Instant</td><td>Flat overlapping surfaces, acetate</td><td>Structural joints under any load</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Presenting the model</h2>
+      <div class="learn-callout good">
+        <strong>Mount on a base board.</strong> A 5mm thick black or white foam board base makes any model look more considered. Cut it 20–30mm larger than the model footprint on each side.
+      </div>
+      <div class="learn-callout good">
+        <strong>Label the scale.</strong> A small printed label on the base board reading the scale (e.g. <em>1:20</em>) tells the viewer exactly how to read the model.
+      </div>
+      <div class="learn-callout good">
+        <strong>Photograph from the corner, slightly above.</strong> An isometric-style photograph — from a corner at eye height to a small person — is the most readable view for an architectural model.
+      </div>
+    </article>
+
+    <!-- ── SKETCHUP VERSIONS ─────────────────────────────────── -->
+    <article class="learn-article" id="art-sketchup-versions">
+      <div class="learn-article-eyebrow">// Software</div>
+      <h1>SketchUp Free vs Pro — what you actually need</h1>
+      <p>SketchUp has several versions with different capabilities and price points. For most students and early-career designers, the free version does everything needed.</p>
+
+      <table class="learn-table">
+        <thead><tr><th>Feature</th><th>Free (Web)</th><th>Pro (Desktop)</th></tr></thead>
+        <tbody>
+          <tr><td>3D modelling</td><td class="good">Full access</td><td class="good">Full access</td></tr>
+          <tr><td>3D Warehouse downloads</td><td class="good">Full access</td><td class="good">Full access</td></tr>
+          <tr><td>DXF export</td><td class="good">Yes</td><td class="good">Yes</td></tr>
+          <tr><td>LayOut (2D drawings)</td><td class="bad">No</td><td class="good">Yes</td></tr>
+          <tr><td>Works offline</td><td class="bad">No — browser only</td><td class="good">Yes</td></tr>
+          <tr><td>Import DXF/DWG</td><td class="bad">No</td><td class="good">Yes</td></tr>
+          <tr><td>Cost</td><td class="good">Free</td><td class="bad">~$350/year</td></tr>
+        </tbody>
+      </table>
+
+      <div class="learn-callout good">
+        <strong>Recommendation for students:</strong> Start with Free. It handles everything in this learning hub — 3D modelling, DXF export, and floor plan export. Upgrade to Pro only if your course specifically requires LayOut for dimensioned drawings, or if you need to work offline.
+      </div>
+    </article>
+
+    <!-- ── ILLUSTRATOR ──────────────────────────────────────── -->
+    <article class="learn-article" id="art-illustrator">
+      <div class="learn-article-eyebrow">// Software</div>
+      <h1>Adobe Illustrator for laser cutting</h1>
+      <p>Illustrator is the bridge between your SketchUp design and the laser cutter. You do not need to know how to design in Illustrator — you just need to know how to prepare a DXF file for cutting.</p>
+
+      <h2>Opening a DXF in Illustrator</h2>
+      <div class="learn-steps">
+        <div class="learn-step"><div class="step-num">1</div><div>Open Illustrator. Go to <strong>File → Open</strong> and select your <code>.dxf</code> file. An import dialog will appear.</div></div>
+        <div class="learn-step"><div class="step-num">2</div><div>In the import dialog, set the scale to <strong>1:1</strong> — you have already applied the scale during the SketchUp export. Do not scale again here.</div></div>
+        <div class="learn-step"><div class="step-num">3</div><div>The file opens as a series of paths. You will likely see the geometry is very small in the centre of the canvas. Press <strong>Cmd/Ctrl + Shift + H</strong> to fit the artboard to the content.</div></div>
+      </div>
+
+      <h2>Preparing the file for cutting</h2>
+      <div class="learn-steps">
+        <div class="learn-step"><div class="step-num">1</div><div><strong>Select all</strong> (Cmd/Ctrl + A). In the stroke panel, set stroke to <strong>0.001pt</strong> (hairline). This tells the laser cutter to cut, not engrave.</div></div>
+        <div class="learn-step"><div class="step-num">2</div><div><strong>Remove all fills.</strong> With everything selected, click the fill swatch at the bottom left of the toolbar and set it to None (the white square with red diagonal line).</div></div>
+        <div class="learn-step"><div class="step-num">3</div><div><strong>Set cut colour to red.</strong> For Trotec machines: select all cut lines, set stroke colour to exact RGB red (R:255, G:0, B:0). Engrave lines stay black.</div></div>
+        <div class="learn-step"><div class="step-num">4</div><div><strong>Print to Trotec Job Control.</strong> Go to File → Print, choose the Trotec laser cutter as the printer. Job Control will open with your file queued.</div></div>
+      </div>
+
+      <div class="learn-callout warn">
+        <strong>No Illustrator access?</strong> Inkscape is a free alternative that handles DXF files and connects to laser cutters. Available at inkscape.org — the workflow is almost identical.
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<!-- ── FOOTER ───────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <a class="footer-brand" href="index.html">
+      <span class="brand-mark">MD</span>
+      ModelDesk
+    </a>
+    <div class="footer-links">
+      <a href="learn.html">Learn</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+    </div>
+    <span class="footer-copy">© 2025 ModelDesk. For designers who build.</span>
+  </div>
+</footer>
+
+<!-- ── MODAL ────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="signupModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <span class="eyebrow">// Free tutoring</span>
+    <h2>Get help with your project</h2>
+    <p>Tell us what you are working on and a tutor will reach out on WhatsApp.</p>
+    <form class="cta-form" id="modalForm" name="tutor-request-learn" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="tutor-request-learn">
+      <input type="hidden" name="bot-field" style="display:none">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="tel" name="whatsapp" placeholder="WhatsApp number (e.g. +61 4xx xxx xxx)" required>
+      <input type="email" name="email" placeholder="Email address">
+      <select name="country" required>
+        <option value="">Country</option>
+        <option>Australia</option>
+        <option>Kenya</option>
+        <option>United Kingdom</option>
+        <option>United States</option>
+        <option>South Africa</option>
+        <option>Nigeria</option>
+        <option>India</option>
+        <option>New Zealand</option>
+        <option>Canada</option>
+        <option>Other</option>
+      </select>
+      <input type="text" name="project" placeholder="What are you working on?">
+      <button type="submit" class="btn btn-primary">Connect now →</button>
+      <p class="form-note">Your tutor will message you on WhatsApp within a few hours.</p>
+    </form>
+    <div class="form-success">
+      <h3>You're connected ✓</h3>
+      <p>Thanks <span class="success-name"></span>! A tutor will reach out on WhatsApp shortly.</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
