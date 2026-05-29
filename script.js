@@ -1,4 +1,5 @@
 // ModelDesk — script.js
+const W3F_KEY = 'edda75a2-32f2-40d3-bf3d-753b9de10bef';
 
 // === THEME ==================================================
 const root = document.documentElement;
@@ -19,7 +20,7 @@ function initTheme() {
 
 // === MOBILE MENU ============================================
 function initMobileMenu() {
-  const btn = document.getElementById('hamburger');
+  const btn  = document.getElementById('hamburger');
   const menu = document.getElementById('mobileMenu');
   if (!btn || !menu) return;
   btn.addEventListener('click', () => menu.classList.toggle('open'));
@@ -41,57 +42,47 @@ function initModal() {
 
 // === LEARN PAGE NAVIGATION ==================================
 function initLearn() {
-  const links = document.querySelectorAll('.sidebar-link[data-article]');
+  const links    = document.querySelectorAll('.sidebar-link[data-article]');
   const articles = document.querySelectorAll('.learn-article');
   if (!links.length) return;
   function show(id) {
     articles.forEach(a => a.classList.remove('active'));
     links.forEach(l => l.classList.remove('active'));
-    const art = document.getElementById('art-' + id);
-    const link = document.querySelector(`.sidebar-link[data-article="${id}"]`);
-    if (art) art.classList.add('active');
-    if (link) link.classList.add('active');
+    document.getElementById('art-' + id)?.classList.add('active');
+    document.querySelector(`.sidebar-link[data-article="${id}"]`)?.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   links.forEach(link => link.addEventListener('click', () => show(link.dataset.article)));
 }
 
-// === FORM SUBMISSION (Netlify Forms) ========================
-// Netlify detects the `netlify` attribute on the form at build time.
-// On submit, we use fetch to POST without a page reload.
+// === FORM SUBMISSION (Web3Forms) ============================
 function handleForm(form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
-    const original = btn.textContent;
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    const data = new FormData(form);
+    const data = Object.fromEntries(new FormData(form));
+    data.access_key = W3F_KEY;
+    data.subject = 'New ModelDesk enquiry — ' + (data.country || 'Unknown');
 
     try {
-      await fetch('/', {
+      await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
       });
-    } catch (_) {
-      // fail silently — show success anyway
-    }
-
-    // Backup: store locally
-    try {
-      const obj = Object.fromEntries(data);
-      obj.timestamp = new Date().toISOString();
-      obj.page = window.location.href;
-      localStorage.setItem('md_signup_' + Date.now(), JSON.stringify(obj));
     } catch (_) {}
 
-    // Show success state
+    // Backup
+    try { localStorage.setItem('md_lead_' + Date.now(), JSON.stringify(data)); } catch(_) {}
+
+    // Show success
     form.style.display = 'none';
     const success = form.nextElementSibling;
     if (success?.classList.contains('form-success')) {
-      const name = data.get('name')?.split(' ')[0] || 'there';
+      const name = data.name?.split(' ')[0] || 'there';
       const nameEl = success.querySelector('.success-name');
       if (nameEl) nameEl.textContent = name;
       success.style.display = 'block';
@@ -100,10 +91,10 @@ function handleForm(form) {
 }
 
 function initForms() {
-  document.querySelectorAll('form[data-netlify]').forEach(handleForm);
+  document.querySelectorAll('form.cta-form').forEach(handleForm);
 }
 
-// === ACTIVE NAV LINK ========================================
+// === ACTIVE NAV =============================================
 function initActiveNav() {
   const path = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(a => {
