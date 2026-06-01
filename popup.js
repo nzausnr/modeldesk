@@ -128,11 +128,31 @@ function buildPopup() {
         <input type="tel"   name="whatsapp" placeholder="WhatsApp (e.g. +44 7xx xxx xxx)" required>
         <select name="country" required>
           <option value="">Country</option>
-          <option>Australia</option><option>Kenya</option>
-          <option>United Kingdom</option><option>United States</option>
-          <option>South Africa</option><option>Nigeria</option>
-          <option>India</option><option>New Zealand</option>
-          <option>Canada</option><option>Other</option>
+          <option>United States</option>
+          <option>United Kingdom</option>
+          <option>Canada</option>
+          <option>Australia</option>
+          <option>New Zealand</option>
+          <option>Germany</option>
+          <option>France</option>
+          <option>Netherlands</option>
+          <option>Sweden</option>
+          <option>Norway</option>
+          <option>Denmark</option>
+          <option>Switzerland</option>
+          <option>Ireland</option>
+          <option>South Africa</option>
+          <option>Nigeria</option>
+          <option>Ghana</option>
+          <option>India</option>
+          <option>Singapore</option>
+          <option>UAE</option>
+          <option>Brazil</option>
+          <option>Kenya</option>
+          <option>Zimbabwe</option>
+          <option>Tanzania</option>
+          <option>Uganda</option>
+          <option>Other</option>
         </select>
         <button type="submit" class="mdp-btn">Connect with a designer →</button>
       </form>

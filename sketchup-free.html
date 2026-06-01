@@ -43,6 +43,10 @@
     <span class="blog-tag">SketchUp</span>
   </div>
 
+  <div style="width:100%;height:280px;border-radius:var(--r-lg);overflow:hidden;margin-bottom:1.5rem;">
+    <img src="images/sketchup-thumb.jpg" alt="SketchUp 3D design software" style="width:100%;height:100%;object-fit:cover;">
+  </div>
+
   <h1 style="margin:1rem 0 1.5rem; font-size:clamp(1.6rem,4vw,2.4rem);">SketchUp Free is more powerful than you think — here is what most tutorials miss</h1>
 
   <p style="font-size:1.1rem; color:var(--text-secondary); margin-bottom:2.5rem; line-height:1.7;">Search for SketchUp tutorials and most of what you find assumes you have the Pro version — LayOut, desktop app, advanced export options. The free web version is talked about as if it is a limitation. It is not. For most design and model-making work, it does everything you need.</p>
@@ -159,15 +163,30 @@
       <input type="email" name="email" placeholder="Email address">
       <select name="country" required>
         <option value="">Country</option>
-        <option>Australia</option>
-        <option>Kenya</option>
-        <option>United Kingdom</option>
         <option>United States</option>
+        <option>United Kingdom</option>
+        <option>Canada</option>
+        <option>Australia</option>
+        <option>New Zealand</option>
+        <option>Germany</option>
+        <option>France</option>
+        <option>Netherlands</option>
+        <option>Sweden</option>
+        <option>Norway</option>
+        <option>Denmark</option>
+        <option>Switzerland</option>
+        <option>Ireland</option>
         <option>South Africa</option>
         <option>Nigeria</option>
+        <option>Ghana</option>
         <option>India</option>
-        <option>New Zealand</option>
-        <option>Canada</option>
+        <option>Singapore</option>
+        <option>UAE</option>
+        <option>Brazil</option>
+        <option>Kenya</option>
+        <option>Zimbabwe</option>
+        <option>Tanzania</option>
+        <option>Uganda</option>
         <option>Other</option>
       </select>
       <input type="text" name="project" placeholder="What are you working on?">
@@ -181,7 +200,11 @@
   </div>
 </div>
 
-<script src="../script.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+<script src="firebase.js"></script>
+<script src="popup.js"></script>
+<script src="script.js"></script>
 <script>
   window.openModal = window.openModal || function() {
     document.getElementById('signupModal')?.classList.add('open');
@@ -190,5 +213,10 @@
     document.getElementById('signupModal')?.classList.remove('open');
   };
 </script>
+<a href="https://wa.me/16296290721?text=Hi%20ModelDesk%2C%20I%20need%20help%20with%20my%20design%20project." class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.769 0-3.44.561-4.823 1.604-.988.747-1.7 1.735-2.106 2.854-.437 1.219-.436 2.551.001 3.77.528 1.48 1.505 2.761 2.743 3.661 1.35 1.027 3.007 1.588 4.766 1.588 1.331 0 2.633-.286 3.863-.857l.455-.214 4.588 1.204-.31-4.883.194-.314c.447-.735.708-1.577.708-2.479 0-1.768-.561-3.44-1.604-4.823-.747-.988-1.736-1.7-2.855-2.106-1.219-.437-2.55-.436-3.769-.001"/>
+  </svg>
+</a>
 </body>
 </html>
