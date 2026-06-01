@@ -969,6 +969,43 @@ footer {
 }
 .mdp-btn:hover { background: var(--accent-hover); }
 .mdp-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+.mdp-wa-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.82rem;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  border-radius: var(--r);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: background 0.18s;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.mdp-wa-btn:hover { background: #1eaa50; }
+.mdp-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+.mdp-divider::before,
+.mdp-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.mdp-divider span {
+  padding: 0 0.5rem;
+}
 .mdp-negative {
   display: block;
   width: 100%;

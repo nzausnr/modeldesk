@@ -101,12 +101,24 @@ function buildPopup() {
       <button class="mdp-skip" id="mdpSkip1" style="display:none">I'm just browsing</button>
     </div>
 
-    <!-- STEP 2: Form -->
+    <!-- STEP 2: WhatsApp or Form -->
     <div class="mdp-step" id="mdpStep2" style="display:none">
       <div class="mdp-icon" id="mdpIcon"></div>
       <div class="mdp-badge mdp-badge-green">✓ We can help with that</div>
       <h3 class="mdp-title" id="mdpTitle2"></h3>
-      <p class="mdp-sub">Leave your WhatsApp — a designer will reach out, usually within a few hours. Free to ask.</p>
+      <p class="mdp-sub" id="mdpSub2"></p>
+      
+      <a href="#" class="mdp-wa-btn" id="mdpWABtn" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:1.2em;height:1.2em;fill:white;margin-right:0.5rem">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.769 0-3.44.561-4.823 1.604-.988.747-1.7 1.735-2.106 2.854-.437 1.219-.436 2.551.001 3.77.528 1.48 1.505 2.761 2.743 3.661 1.35 1.027 3.007 1.588 4.766 1.588 1.331 0 2.633-.286 3.863-.857l.455-.214 4.588 1.204-.31-4.883.194-.314c.447-.735.708-1.577.708-2.479 0-1.768-.561-3.44-1.604-4.823-.747-.988-1.736-1.7-2.855-2.106-1.219-.437-2.55-.436-3.769-.001"/>
+        </svg>
+        Message on WhatsApp
+      </a>
+      
+      <div class="mdp-divider">
+        <span>or leave your number</span>
+      </div>
+      
       <form class="mdp-form" id="mdpForm">
         <input type="hidden" name="access_key" value="${W3F_KEY}">
         <input type="hidden" name="user_email" value="">
@@ -147,13 +159,32 @@ function goStep2(key) {
   document.getElementById('mdpStep1').style.display = 'none';
   document.getElementById('mdpStep2').style.display = 'block';
   document.getElementById('mdpIcon').textContent = a.icon;
+  
+  // Personalized greeting with user's first name
+  const firstName = mdUser?.displayName?.split(' ')[0] || 'there';
   document.getElementById('mdpTitle2').textContent =
-    'Great — we help with ' + a.label + ' every day';
+    firstName + ', a ModelDesk designer can guide you through ' + a.label + ' — for free';
+  
+  // Set form values
   document.getElementById('mdpTopic').value = a.label;
   document.getElementById('mdpSubject').value = 'ModelDesk enquiry: ' + a.label;
-  // pre-fill email if signed in
+  
+  // Pre-fill name from Google auth
+  const nameInput = document.querySelector('#mdpForm input[name="name"]');
+  if (nameInput && mdUser?.displayName) nameInput.value = mdUser.displayName;
+  
+  // Pre-fill email if signed in
   const emailInput = document.querySelector('#mdpForm input[name="user_email"]');
   if (emailInput && mdUser?.email) emailInput.value = mdUser.email;
+  
+  // Build WhatsApp link with personalized message
+  const waNumber = '16296290721';
+  const waMessage = `Hi ModelDesk, I'm ${mdUser?.displayName || 'there'}! I need help with ${a.label}.`;
+  const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+  document.getElementById('mdpWABtn').href = waLink;
+  
+  // Set sub-text
+  document.getElementById('mdpSub2').textContent = 'a designer will reach out, usually within a few hours. Free to ask.';
 }
 
 function initSurveyPopup() {
