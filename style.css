@@ -247,6 +247,8 @@ p:last-child { margin-bottom: 0; }
   background: var(--bg-card);
   border-bottom: 1px solid var(--border);
   padding: 1rem 1.5rem;
+  position: relative;
+  z-index: 101;
 }
 .mobile-menu.open { display: block; }
 .mobile-menu a {
@@ -258,6 +260,24 @@ p:last-child { margin-bottom: 0; }
   text-decoration: none;
 }
 .mobile-menu a:last-child { border-bottom: none; }
+.mobile-theme-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.mobile-theme-btn {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--text);
+  font-family: inherit;
+}
 
 /* === HERO ================================================== */
 .hero {
@@ -757,7 +777,33 @@ footer {
     grid-template-columns: 1fr;
   }
   .learn-layout { grid-template-columns: 1fr; }
-  .learn-sidebar { position: static; max-height: none; }
+  .learn-sidebar { position: static; max-height: none; overflow: visible; }
+  /* Accordion: hide sidebar links and cta by default on mobile */
+  .learn-sidebar .sidebar-link,
+  .learn-sidebar .sidebar-cta { display: none; }
+  /* Show links when parent group is open — handled by JS adding .open class */
+  .sidebar-link.accordion-visible { display: flex; }
+  .sidebar-cta.accordion-visible { display: block; }
+  /* Group headers become accordion toggles */
+  .sidebar-group {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0.6rem;
+    margin-top: 0.5rem;
+    background: var(--bg-subtle);
+    border-radius: var(--r);
+    border: 1px solid var(--border);
+    user-select: none;
+  }
+  .sidebar-group::after {
+    content: '▸';
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    transition: transform 0.2s;
+  }
+  .sidebar-group.open::after { transform: rotate(90deg); }
   .form-row { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .section { padding: 3rem 0; }
@@ -1125,7 +1171,7 @@ footer {
   align-items: center;
   justify-content: center;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.28));
-  z-index: 999;
+  z-index: 98;
   transition: transform 0.2s, filter 0.2s;
 }
 .wa-float:hover {

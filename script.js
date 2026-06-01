@@ -24,6 +24,22 @@ function initMobileMenu() {
   const menu = document.getElementById('mobileMenu');
   if (!btn || !menu) return;
   btn.addEventListener('click', () => menu.classList.toggle('open'));
+
+  // Mobile theme toggle — wired to button inside mobile menu
+  const mobileThemeBtn = document.getElementById('mobileThemeToggle');
+  if (mobileThemeBtn) {
+    // Set initial label
+    mobileThemeBtn.textContent = root.getAttribute('data-theme') === 'dark' ? '☀️ Light mode' : '🌙 Dark mode';
+    mobileThemeBtn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('md-theme', next);
+      mobileThemeBtn.textContent = next === 'dark' ? '☀️ Light mode' : '🌙 Dark mode';
+      // Sync desktop toggle too
+      const desktopBtn = document.getElementById('themeToggle');
+      if (desktopBtn) desktopBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }
 }
 
 // === MODAL ==================================================
@@ -66,7 +82,47 @@ function initLearn() {
   links.forEach(link => link.addEventListener('click', (e) => {
     e.preventDefault();
     show(link.dataset.article);
+    // On mobile: close the accordion after selection
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('.sidebar-group.open').forEach(g => g.classList.remove('open'));
+    }
   }));
+
+  // Mobile accordion — only active on small screens
+  function initAccordion() {
+    if (window.innerWidth > 768) return;
+    const groups = Array.from(document.querySelectorAll('.learn-sidebar .sidebar-group'));
+
+    function getGroupItems(group) {
+      // Collect all siblings between this group and the next group (or end)
+      const items = [];
+      let el = group.nextElementSibling;
+      while (el && !el.classList.contains('sidebar-group')) {
+        items.push(el);
+        el = el.nextElementSibling;
+      }
+      return items;
+    }
+
+    function closeAll() {
+      groups.forEach(g => {
+        g.classList.remove('open');
+        getGroupItems(g).forEach(item => item.classList.remove('accordion-visible'));
+      });
+    }
+
+    groups.forEach(group => {
+      group.addEventListener('click', () => {
+        const isOpen = group.classList.contains('open');
+        closeAll();
+        if (!isOpen) {
+          group.classList.add('open');
+          getGroupItems(group).forEach(item => item.classList.add('accordion-visible'));
+        }
+      });
+    });
+  }
+  initAccordion();
 }
 
 // === FORM SUBMISSION (Web3Forms) ============================
