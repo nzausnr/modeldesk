@@ -33,6 +33,9 @@ function openModal() {
 function closeModal() {
   document.getElementById('signupModal')?.classList.remove('open');
 }
+window.openModal = openModal;
+window.closeModal = closeModal;
+window.__mdScriptLoaded = true;
 function initModal() {
   const overlay = document.getElementById('signupModal');
   if (!overlay) return;

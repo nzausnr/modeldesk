@@ -76,7 +76,7 @@
       <p>The free consultation offered through ModelDesk connects you directly with a designer on WhatsApp. This is not a chatbot or an automated system — it is a real person who has used these tools on real projects and can work through your specific problem with you.</p>
       <p>Sessions are informal and project-focused. You describe what you are trying to do, share your file or a screenshot, and work through it together. Most issues are resolved in one short conversation.</p>
       <div style="margin-top:1.5rem;">
-        <button class="btn btn-primary btn-lg" onclick="openModal()">Connect with a tutor →</button>
+        <button class="btn btn-primary btn-lg" onclick="openModal()">Connect with a consultant →</button>
       </div>
     </div>
   </div>
@@ -99,7 +99,7 @@
     <button class="modal-close" onclick="closeModal()">✕</button>
     <span class="eyebrow">// Free consultation</span>
     <h2>Get help with your project</h2>
-    <p>Tell us what you are working on and a tutor will reach out on WhatsApp.</p>
+    <p>Tell us what you are working on and a consultant will reach out on WhatsApp.</p>
     <form class="cta-form" id="modalForm" name="tutor-request-about" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="tutor-request-about">
       <input type="hidden" name="bot-field" style="display:none">
@@ -121,15 +121,23 @@
       </select>
       <input type="text" name="project" placeholder="What are you working on?">
       <button type="submit" class="btn btn-primary">Connect now →</button>
-      <p class="form-note">Your tutor will message you on WhatsApp within a few hours.</p>
+      <p class="form-note">A consultant will message you on WhatsApp within a few hours.</p>
     </form>
     <div class="form-success">
       <h3>You're connected ✓</h3>
-      <p>Thanks <span class="success-name"></span>! A tutor will reach out on WhatsApp shortly.</p>
+      <p>Thanks <span class="success-name"></span>! A consultant will reach out on WhatsApp shortly.</p>
     </div>
   </div>
 </div>
 
 <script src="script.js"></script>
+<script>
+  window.openModal = window.openModal || function() {
+    document.getElementById('signupModal')?.classList.add('open');
+  };
+  window.closeModal = window.closeModal || function() {
+    document.getElementById('signupModal')?.classList.remove('open');
+  };
+</script>
 </body>
 </html>

@@ -128,7 +128,7 @@
       <div class="feature-card">
         <span class="feature-icon">🎓</span>
         <h3>Free consultation</h3>
-        <p>Stuck on something specific? Connect with a design tutor on WhatsApp and get direct, project-level help.</p>
+        <p>Stuck on something specific? Connect with a design consultant on WhatsApp and get direct, project-level help.</p>
       </div>
     </div>
   </div>
@@ -280,13 +280,13 @@
 
 <hr class="divider">
 
-<!-- ── SIGNUP / TUTOR CTA ───────────────────────────────────── -->
+<!-- ── SIGNUP / CONSULTATION CTA ───────────────────────────────── -->
 <section class="section cta-section">
   <div class="container">
     <div class="cta-inner">
-      <span class="eyebrow">// Free 1-on-1 help</span>
-      <h2>Connect with a design tutor</h2>
-      <p>Stuck on a specific part of your project? Our tutors connect with you directly on WhatsApp and help you through it — no booking, no fee.</p>
+      <span class="eyebrow">// Free 1-on-1 consultation</span>
+      <h2>Connect with a design consultant</h2>
+      <p>Stuck on a specific part of your project? A consultant will connect with you directly on WhatsApp and help you through it — no booking, no fee.</p>
 
       <form class="cta-form" id="mainForm" name="tutor-request" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="tutor-request">
@@ -310,12 +310,12 @@
         <input type="tel" name="whatsapp" placeholder="WhatsApp number (e.g. +44 7xx xxx xxx)" required>
         <input type="email" name="email" placeholder="Email address">
         <input type="text" name="project" placeholder="What are you working on? (e.g. architecture model, school project)">
-        <button type="submit" class="btn btn-primary btn-lg">Connect with a tutor →</button>
-        <p class="form-note">A tutor will message you on WhatsApp within a few hours. Your details are never shared with third parties.</p>
+        <button type="submit" class="btn btn-primary btn-lg">Connect with a consultant →</button>
+        <p class="form-note">A consultant will message you on WhatsApp within a few hours. Your details are never shared with third parties.</p>
       </form>
       <div class="form-success">
         <h3>You're connected ✓</h3>
-        <p>Thanks <span class="success-name"></span>! A tutor will reach out on WhatsApp shortly. Keep an eye on your messages.</p>
+        <p>Thanks <span class="success-name"></span>! A consultant will reach out on WhatsApp shortly. Keep an eye on your messages.</p>
       </div>
     </div>
   </div>
@@ -344,7 +344,7 @@
     <button class="modal-close" onclick="closeModal()">✕</button>
     <span class="eyebrow">// Free consultation</span>
     <h2>Get help with your project</h2>
-    <p>Tell us what you are working on and a tutor will reach out on WhatsApp.</p>
+    <p>Tell us what you are working on and a consultant will reach out on WhatsApp.</p>
     <form class="cta-form" id="modalForm" name="tutor-request-modal" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="tutor-request-modal">
       <input type="hidden" name="bot-field" style="display:none">
@@ -366,11 +366,11 @@
       </select>
       <input type="text" name="project" placeholder="What are you working on?">
       <button type="submit" class="btn btn-primary">Connect now →</button>
-      <p class="form-note">Your tutor will message you on WhatsApp within a few hours.</p>
+      <p class="form-note">A consultant will message you on WhatsApp within a few hours.</p>
     </form>
     <div class="form-success">
       <h3>You're connected ✓</h3>
-      <p>Thanks <span class="success-name"></span>! A tutor will reach out on WhatsApp shortly.</p>
+      <p>Thanks <span class="success-name"></span>! A consultant will reach out on WhatsApp shortly.</p>
     </div>
   </div>
 </div>
@@ -380,5 +380,13 @@
 <script src="firebase.js"></script>
 <script src="popup.js"></script>
 <script src="script.js"></script>
+<script>
+  window.openModal = window.openModal || function() {
+    document.getElementById('signupModal')?.classList.add('open');
+  };
+  window.closeModal = window.closeModal || function() {
+    document.getElementById('signupModal')?.classList.remove('open');
+  };
+</script>
 </body>
 </html>
