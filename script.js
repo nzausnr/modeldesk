@@ -51,9 +51,17 @@ function initLearn() {
   function show(id) {
     articles.forEach(a => a.classList.remove('active'));
     links.forEach(l => l.classList.remove('active'));
-    document.getElementById('art-' + id)?.classList.add('active');
-    document.querySelector(`.sidebar-link[data-article="${id}"]`)?.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const art = document.getElementById('art-' + id);
+    const lnk = document.querySelector(`.sidebar-link[data-article="${id}"]`);
+    if (art) art.classList.add('active');
+    if (lnk) lnk.classList.add('active');
+    // On mobile the sidebar stacks above the content, so scroll to
+    // the article itself. On desktop they are side-by-side so scroll to top.
+    if (window.innerWidth <= 768) {
+      art?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
   links.forEach(link => link.addEventListener('click', (e) => {
     e.preventDefault();
