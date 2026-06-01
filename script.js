@@ -55,7 +55,10 @@ function initLearn() {
     document.querySelector(`.sidebar-link[data-article="${id}"]`)?.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  links.forEach(link => link.addEventListener('click', () => show(link.dataset.article)));
+  links.forEach(link => link.addEventListener('click', (e) => {
+    e.preventDefault();
+    show(link.dataset.article);
+  }));
 }
 
 // === FORM SUBMISSION (Web3Forms) ============================
