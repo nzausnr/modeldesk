@@ -262,17 +262,27 @@ function init() {
     return;
   }
 
+  // Use a short delay so Firebase can resolve auth state before showing the gate.
+  // This prevents the overlay from blocking the page for already-signed-in users.
+  let gateShown = false;
+  const gateTimer = setTimeout(() => {
+    if (!mdUser) {
+      gateShown = true;
+      showSignInGate();
+    }
+  }, 800);
+
   window.mdAuth.onAuthStateChanged(user => {
     mdUser = user;
 
     if (user) {
-      // Signed in: mark authed, close gate if open, show survey
+      // Signed in: clear timer, close gate if open, show survey
+      clearTimeout(gateTimer);
       localStorage.setItem(AUTH_KEY, '1');
       closeSignInGate();
       initSurveyPopup();
-    } else {
-      // Not signed in — always show gate, no bypass
-      showSignInGate();
+    } else if (!gateShown) {
+      // Not signed in and timer hasn't fired yet — let the timer handle it
     }
   });
 }
