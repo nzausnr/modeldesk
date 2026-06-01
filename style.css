@@ -149,7 +149,7 @@ p:last-child { margin-bottom: 0; }
   height: var(--nav-h);
   background: var(--bg);
   border-bottom: 1px solid var(--border);
-  z-index: 100;
+  z-index: 10000;
   transition: background var(--transition), border-color var(--transition);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -248,7 +248,7 @@ p:last-child { margin-bottom: 0; }
   border-bottom: 1px solid var(--border);
   padding: 1rem 1.5rem;
   position: relative;
-  z-index: 101;
+  z-index: 10001;
 }
 .mobile-menu.open { display: block; }
 .mobile-menu a {
