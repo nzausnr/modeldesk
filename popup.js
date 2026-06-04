@@ -4,6 +4,7 @@
 const W3F_KEY   = 'edda75a2-32f2-40d3-bf3d-753b9de10bef';
 const SEEN_KEY  = 'md_popup_v2';       // survey popup already shown
 const AUTH_KEY  = 'md_authed';         // user has signed in at least once
+const GOOGLE_SIGN_IN_GATE_ENABLED = false; // Set to true to restore the forced Google sign-in gate.
 
 const answers = {
   'architecture': { label: 'an architecture model', icon: '🏗' },
@@ -260,28 +261,37 @@ function init() {
     return;
   }
 
-  // Use a short delay so Firebase can resolve auth state before showing the gate.
-  // This prevents the overlay from blocking the page for already-signed-in users.
+  // Keep the Google gate logic in place, but leave it inactive by default.
+  // Flip GOOGLE_SIGN_IN_GATE_ENABLED to true when you want the old behavior again.
+  if (!GOOGLE_SIGN_IN_GATE_ENABLED) {
+    initSurveyPopup();
+  }
+
   let gateShown = false;
-  const gateTimer = setTimeout(() => {
-    if (!mdUser) {
-      gateShown = true;
-      showSignInGate();
-    }
-  }, 800);
+  const gateTimer = GOOGLE_SIGN_IN_GATE_ENABLED
+    ? setTimeout(() => {
+        if (!mdUser) {
+          gateShown = true;
+          showSignInGate();
+        }
+      }, 800)
+    : null;
 
   window.mdAuth.onAuthStateChanged(user => {
     mdUser = user;
 
     if (user) {
-      // Signed in: clear timer, close gate if open, show survey
-      clearTimeout(gateTimer);
+      // Signed in: clear timer, close gate if open, show survey.
+      if (gateTimer) clearTimeout(gateTimer);
       localStorage.setItem(AUTH_KEY, '1');
       closeSignInGate();
       initSurveyPopup();
+    } else if (!GOOGLE_SIGN_IN_GATE_ENABLED) {
+      // Gate is disabled: keep the popup flow active without forcing sign-in.
+      initSurveyPopup();
     } else if (!gateShown) {
-      // Not signed in — only block on index page, show popup on other pages
-      clearTimeout(gateTimer);
+      // Not signed in — only block on index page, show popup on other pages.
+      if (gateTimer) clearTimeout(gateTimer);
       const isIndex = window.location.pathname === '/' ||
                       window.location.pathname.endsWith('/index.html') ||
                       window.location.pathname === '';
